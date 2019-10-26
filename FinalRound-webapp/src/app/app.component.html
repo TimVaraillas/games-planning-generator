@@ -1,1 +1,18 @@
-<router-outlet></router-outlet>
+<nb-layout>
+  <nb-layout-header fixed class="header">
+    <a class="header-menu-toggler" href="#" (click)="toggle()">
+      <nb-icon icon="menu"></nb-icon>
+    </a>
+    <a class="header-logo" href="#">FinalRound</a>
+  </nb-layout-header>
+
+  <nb-sidebar>
+    <nb-menu [items]="items">
+    </nb-menu>
+  </nb-sidebar>
+
+  <nb-layout-column class="colored-column-basic">
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+</nb-layout>
