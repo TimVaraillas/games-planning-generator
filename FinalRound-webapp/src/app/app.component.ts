@@ -53,7 +53,8 @@ export class AppComponent {
     this.translate.get(['MENU.ACCUEIL', 'MENU.TOURNOIS_CREES']).subscribe((res: string[]) => {
       this.menuItems = [
         { title: res['MENU.ACCUEIL'], icon: { icon: 'home', pack: 'fas' }, link: "/" },
-        { title: res['MENU.TOURNOIS_CREES'], icon: { icon: 'trophy', pack: 'fas' }, link: "/tournament/list" }
+        { title: res['MENU.TOURNOIS_CREES'], icon: { icon: 'trophy', pack: 'fas' }, link: "/tournament/list" },
+        { title: 'Ajouter un tournoi', icon: { icon: 'plus', pack: 'fas' }, link: "/tournament/add" }
       ]
     });
   }

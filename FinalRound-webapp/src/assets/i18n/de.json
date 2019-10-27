@@ -9,6 +9,14 @@
       "MESSAGE_BOUTON": "Zurück zur Startseite",
       "MESSAGE_ERREUR": "Die Seite, die Sie zu erreichen versuchen, existiert nicht.",
       "OUPS": "Hoppla!"
+    },
+    "TOURNOI": {
+      "AJOUTER": {
+        "BOUTON_AJOUTER": "Hinzufügen",
+        "ERREUR_CHAMP_OBLIGATOIRE": "Das Feld ist Pflichtfeld",
+        "LABEL_NOM": "Name des Turniers",
+        "TITRE": "Ein neues Turnier erstellen"
+      }
     }
   }
 }

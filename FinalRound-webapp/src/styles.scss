@@ -6,3 +6,17 @@
   @include nb-theme-global();
 };
 /* You can add global styles to this file, and also import other style files */
+
+
+input {
+  margin: .5em 0;
+}
+.input-success {
+  border-color: nb-theme(color-success-500) !important;
+}
+.input-danger {
+  border-color: nb-theme(color-danger-500) !important;
+}
+.input-warning {
+  border-color: nb-theme(color-warning-500) !important;
+}

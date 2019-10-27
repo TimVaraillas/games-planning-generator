@@ -9,6 +9,14 @@
       "MESSAGE_BOUTON": "Volver a la página de inicio",
       "MESSAGE_ERREUR": "La página a la que intenta acceder no existe.",
       "OUPS": "¡Uy!"
+    },
+    "TOURNOI": {
+      "AJOUTER": {
+        "BOUTON_AJOUTER": "Añadir",
+        "ERREUR_CHAMP_OBLIGATOIRE": "El campo es obligatorio",
+        "LABEL_NOM": "Nombre del torneo",
+        "TITRE": "Crear un nuevo torneo"
+      }
     }
   }
 }

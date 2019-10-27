@@ -9,6 +9,14 @@
       "MESSAGE_BOUTON": "Take me home",
       "MESSAGE_ERREUR": "The page you're trying to reach doesn't exist.",
       "OUPS": "Oops!"
+    },
+    "TOURNOI": {
+      "AJOUTER": {
+        "BOUTON_AJOUTER": "Add",
+        "ERREUR_CHAMP_OBLIGATOIRE": "The field is required",
+        "LABEL_NOM": "Name of the tournament",
+        "TITRE": "Create a new tournament"
+      }
     }
   }
 }
