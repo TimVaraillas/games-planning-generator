@@ -1,7 +1,7 @@
 {
   "MENU": {
     "ACCUEIL": "Accueil",
-    "TOURNOIS_CREES": "Tournois créés"
+    "VOS_TOURNOIS": "Vos tournois"
   },
   "PAGES": {
     "404": {
@@ -12,7 +12,6 @@
     },
     "TOURNOI": {
       "AJOUTER": {
-        "BOUTON_AJOUTER": "Ajouter",
         "FORMULAIRE": {
           "BOUTON": {
             "CREER": "Créer"
@@ -37,6 +36,33 @@
           "SUCCES": {
             "MESSAGE": "Le tournoi a été créé avec succès",
             "TITRE": "Tournoi créé"
+          }
+        }
+      },
+      "LISTE": {
+        "TABLEAU": {
+          "ACTION": {
+            "SUPPRIMER": {
+              "LABEL": "Supprimer"
+            }
+          },
+          "CHAMP": {
+            "NOM": {
+              "LABEL": "Nom du tournoi"
+            }
+          }
+        },
+        "TITRE": "Liste de vos tournois",
+        "TOAST": {
+          "SUPPRIMER": {
+            "ERREUR": {
+              "MESSAGE": "Une erreur s'est produite, le tournoi n'a pas pu être supprimé",
+              "TITRE": "Erreur"
+            },
+            "SUCCES": {
+              "MESSAGE": "Le tournoi a été supprimé avec succès",
+              "TITRE": "Tournoi supprimé"
+            }
           }
         }
       }

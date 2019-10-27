@@ -1,7 +1,7 @@
 {
   "MENU": {
     "ACCUEIL": "Startseite",
-    "TOURNOIS_CREES": "Erstellte Turniere"
+    "VOS_TOURNOIS": "Ihre Turniere"
   },
   "PAGES": {
     "404": {
@@ -12,7 +12,6 @@
     },
     "TOURNOI": {
       "AJOUTER": {
-        "BOUTON_AJOUTER": "Hinzufügen",
         "FORMULAIRE": {
           "BOUTON": {
             "CREER": "Erstellen"
@@ -37,6 +36,33 @@
           "SUCCES": {
             "MESSAGE": "Das Turnier wurde erfolgreich erstellt",
             "TITRE": "Turnier erstellt"
+          }
+        }
+      },
+      "LISTE": {
+        "TABLEAU": {
+          "ACTION": {
+            "SUPPRIMER": {
+              "LABEL": "Löschen"
+            }
+          },
+          "CHAMP": {
+            "NOM": {
+              "LABEL": "Name des Turniers"
+            }
+          }
+        },
+        "TITRE": "Liste Ihrer Turniere",
+        "TOAST": {
+          "SUPPRIMER": {
+            "ERREUR": {
+              "MESSAGE": "Es ist ein Fehler aufgetreten, das Turnier konnte nicht gelöscht werden",
+              "TITRE": "Fehler"
+            },
+            "SUCCES": {
+              "MESSAGE": "Das Turnier wurde erfolgreich abgesagt",
+              "TITRE": "Turnier gelöscht"
+            }
           }
         }
       }

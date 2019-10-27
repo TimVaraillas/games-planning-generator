@@ -1,7 +1,7 @@
 {
   "MENU": {
     "ACCUEIL": "Home",
-    "TOURNOIS_CREES": "Tournaments created"
+    "VOS_TOURNOIS": "Your tournaments"
   },
   "PAGES": {
     "404": {
@@ -12,7 +12,6 @@
     },
     "TOURNOI": {
       "AJOUTER": {
-        "BOUTON_AJOUTER": "Add",
         "FORMULAIRE": {
           "BOUTON": {
             "CREER": "Create"
@@ -37,6 +36,33 @@
           "SUCCES": {
             "MESSAGE": "The tournament was successfully created",
             "TITRE": "Tournament created"
+          }
+        }
+      },
+      "LISTE": {
+        "TABLEAU": {
+          "ACTION": {
+            "SUPPRIMER": {
+              "LABEL": "Delete"
+            }
+          },
+          "CHAMP": {
+            "NOM": {
+              "LABEL": "Name of the tournament"
+            }
+          }
+        },
+        "TITRE": "List of your tournaments",
+        "TOAST": {
+          "SUPPRIMER": {
+            "ERREUR": {
+              "MESSAGE": "An error occurred, the tournament could not be deleted",
+              "TITRE": "Error"
+            },
+            "SUCCES": {
+              "MESSAGE": "The tournament has been successfully cancelled",
+              "TITRE": "Tournament deleted"
+            }
           }
         }
       }

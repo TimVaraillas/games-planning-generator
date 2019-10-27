@@ -50,10 +50,10 @@ export class AppComponent {
    * Définir les items du menu pricipal
    */
   setMenuItems(): void {
-    this.translate.get(['MENU.ACCUEIL', 'MENU.TOURNOIS_CREES']).subscribe((res: string[]) => {
+    this.translate.get(['MENU.ACCUEIL', 'MENU.VOS_TOURNOIS']).subscribe((res: string[]) => {
       this.menuItems = [
         { title: res['MENU.ACCUEIL'], icon: { icon: 'home', pack: 'fas' }, link: "/" },
-        { title: res['MENU.TOURNOIS_CREES'], icon: { icon: 'trophy', pack: 'fas' }, link: "/tournament/list" },
+        { title: res['MENU.VOS_TOURNOIS'], icon: { icon: 'trophy', pack: 'fas' }, link: "/tournament/list" },
         { title: 'Ajouter un tournoi', icon: { icon: 'plus', pack: 'fas' }, link: "/tournament/add" }
       ]
     });

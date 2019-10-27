@@ -11,7 +11,16 @@ export class TournamentService {
 
   constructor(private http: HttpClient) { }
 
+  get() {
+    console.log('list');
+    return this.http.get(`${this.uri}`);
+  }
+
   add(tournament: Tournament) {
     return this.http.post(`${this.uri}/add`, tournament);
+  }
+
+  delete(id: String) {
+    return this.http.delete(`${this.uri}/delete/${id}`);
   }
 }
