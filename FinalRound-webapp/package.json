@@ -22,6 +22,8 @@
     "@angular/router": "~8.2.11",
     "@nebular/eva-icons": "^4.4.0",
     "@nebular/theme": "^4.4.0",
+    "@ngx-translate/core": "^11.0.1",
+    "@ngx-translate/http-loader": "^4.0.0",
     "eva-icons": "^1.1.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

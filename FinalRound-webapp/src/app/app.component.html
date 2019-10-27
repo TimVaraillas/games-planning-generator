@@ -1,9 +1,23 @@
 <nb-layout>
   <nb-layout-header fixed class="header">
-    <a class="header-menu-toggler" href="#" (click)="toggle()">
-      <nb-icon icon="menu"></nb-icon>
-    </a>
-    <a class="header-logo" href="#">FinalRound</a>
+    
+    <div class="header-container">
+
+      <div>
+        <a class="header-menu-toggler" href="#" (click)="toggle()">
+          <nb-icon icon="menu"></nb-icon>
+        </a>
+        <a class="header-logo" href="#">FinalRound</a>
+      </div>
+
+      <div class="header-right">
+        <div [nbContextMenu]="languages" nbContextMenuTag="lang-menu">
+          <nb-icon class="flag" icon="{{ selectedLanguage.icon.icon }}" pack="flag"></nb-icon>
+        </div>
+      </div>
+
+    </div>
+  
   </nb-layout-header>
 
   <nb-sidebar>
