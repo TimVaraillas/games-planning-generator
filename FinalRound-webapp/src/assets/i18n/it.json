@@ -1,7 +1,14 @@
 {
-  "GENERAL": {},
   "MENU": {
     "ACCUEIL": "Home",
     "TOURNOIS_CREES": "Tornei creati"
+  },
+  "PAGES": {
+    "404": {
+      "ERREUR_404": "Errore 404!",
+      "MESSAGE_BOUTON": "Torna alla pagina iniziale",
+      "MESSAGE_ERREUR": "La pagina che stai cercando di raggiungere non esiste.",
+      "OUPS": "Oops!"
+    }
   }
 }

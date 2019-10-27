@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
 import { NbSidebarService, NbIconLibraries, NbMenuService } from '@nebular/theme';
-import { icons } from './utils/icons';
+import { icons } from '../utils/icons';
 import { filter } from 'rxjs/operators';
 
 @Component({

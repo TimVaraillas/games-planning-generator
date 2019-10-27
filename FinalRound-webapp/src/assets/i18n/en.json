@@ -1,7 +1,14 @@
 {
-  "GENERAL": {},
   "MENU": {
     "ACCUEIL": "Home",
     "TOURNOIS_CREES": "Tournaments created"
+  },
+  "PAGES": {
+    "404": {
+      "ERREUR_404": "Error 404",
+      "MESSAGE_BOUTON": "Take me home",
+      "MESSAGE_ERREUR": "The page you're trying to reach doesn't exist.",
+      "OUPS": "Oops!"
+    }
   }
 }

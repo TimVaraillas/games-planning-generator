@@ -1,7 +1,14 @@
 {
-  "GENERAL": {},
   "MENU": {
     "ACCUEIL": "Startseite",
     "TOURNOIS_CREES": "Erstellte Turniere"
+  },
+  "PAGES": {
+    "404": {
+      "ERREUR_404": "Fehler 404",
+      "MESSAGE_BOUTON": "Zurück zur Startseite",
+      "MESSAGE_ERREUR": "Die Seite, die Sie zu erreichen versuchen, existiert nicht.",
+      "OUPS": "Hoppla!"
+    }
   }
 }

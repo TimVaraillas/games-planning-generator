@@ -8,12 +8,13 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http'
 
 // Nebular modules
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbActionsModule, NbMenuModule, NbIconModule, NbContextMenuModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbActionsModule, NbMenuModule, NbIconModule, NbContextMenuModule, NbCardModule, NbButtonModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 // Pages
 import { HomeComponent } from './_pages/home/home.component';
 import { TournamentsListComponent } from './_pages/tournaments-list/tournaments-list.component';
+import { PageNotFoundComponent } from './_pages/errors/page-not-found/page-not-found.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -24,7 +25,8 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     AppComponent,
     HomeComponent,
-    TournamentsListComponent
+    TournamentsListComponent,
+    PageNotFoundComponent
   ],
   imports: [
     AppRoutingModule,
@@ -32,6 +34,8 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserModule,
     HttpClientModule,
     NbActionsModule,
+    NbButtonModule,
+    NbCardModule,
     NbEvaIconsModule,
     NbIconModule,
     NbLayoutModule,

@@ -1,6 +1,5 @@
 import { NbIconLibraries } from '@nebular/theme';
-import '../../../node_modules/@fortawesome/fontawesome-free/css/all.css'
-import '../../../node_modules/@fortawesome/fontawesome-free/js/all.js'
+import '@fortawesome/fontawesome-free/js/all'
 
 export const icons = {
     addIcons: (iconLibraries) => {
