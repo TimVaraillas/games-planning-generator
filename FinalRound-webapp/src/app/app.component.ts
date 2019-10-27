@@ -1,8 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
-import { NbSidebarService, NbIconLibraries, NbContextMenuDirective, NbMenuService } from '@nebular/theme';
+import { Component } from '@angular/core';
+import { TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
+import { NbSidebarService, NbIconLibraries, NbMenuService } from '@nebular/theme';
 import { icons } from './utils/icons';
-import { filter, map } from 'rxjs/operators';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -11,24 +11,16 @@ import { filter, map } from 'rxjs/operators';
 })
 export class AppComponent {
 
+  menuItems = [];
 
-  items = [
-    {
-      title: 'Accueil',
-      icon: 'home-outline',
-      link: [],
-    }
-  ];
-
-  selectedLanguage = { title: 'Français', icon: { icon: 'fr', pack: 'flag' } };
+  selectedLanguage = { code: 'fr', title: 'Français', icon: { icon: 'fr', pack: 'flag' } };
   languages = [
-    { title: 'Deutsch', icon: { icon: 'de', pack: 'flag' } },
-    { title: 'English', icon: { icon: 'en', pack: 'flag' } },
-    { title: 'Español', icon: { icon: 'es', pack: 'flag' } },
-    { title: 'Français', icon: { icon: 'fr', pack: 'flag' } }, 
-    { title: 'Italiano', icon: { icon: 'it', pack: 'flag' } }, 
+    { code: 'de', title: 'Deutsch', icon: { icon: 'de', pack: 'flag' } },
+    { code: 'en', title: 'English', icon: { icon: 'en', pack: 'flag' } },
+    { code: 'es', title: 'Español', icon: { icon: 'es', pack: 'flag' } },
+    { code: 'fr', title: 'Français', icon: { icon: 'fr', pack: 'flag' } }, 
+    { code: 'it', title: 'Italiano', icon: { icon: 'it', pack: 'flag' } }, 
   ];
-  @ViewChild(NbContextMenuDirective, { static: false }) languagesMenu: NbContextMenuDirective;
 
   constructor(
     private translate: TranslateService,
@@ -37,26 +29,47 @@ export class AppComponent {
     private nbMenuService: NbMenuService
   ) {
 
-    icons.addIcons(this.iconLibraries);
+    icons.addIcons(this.iconLibraries); // Ajouter les pack d'icones personnalisées
 
-    this.nbMenuService.onItemClick().pipe(
+    this.translate.setDefaultLang(this.selectedLanguage.code); // Définir le langage par défaut
+    
+    this.setMenuItems(); // Définir les items du menu
+    this.translate.onLangChange.subscribe((event: TranslationChangeEvent) => {
+      this.setMenuItems(); // Redefinir les items du menu traduits en cas de changement de langue
+    });
+
+    this.nbMenuService.onItemClick().pipe( // Ajouter un listener sur le menu de sélection de la langue
       filter(({ tag }) => tag === 'lang-menu')
     ).subscribe(data => {
       this.setLanguage(data.item);
     });
 
-    // this language will be used as a fallback when a translation isn't found in the current language
-    translate.setDefaultLang('en');
-    // the lang to use, if the lang isn't available, it will use the current loader to get them
-    translate.use('en');
   }
 
-  setLanguage(lang) {
-    console.log(lang);
+  /**
+   * Définir les items du menu pricipal
+   */
+  setMenuItems(): void {
+    this.translate.get(['MENU.ACCUEIL']).subscribe((res: string[]) => {
+      this.menuItems = [
+        { title: res['MENU.ACCUEIL'], icon: 'home-outline', link: "" }
+      ]
+    });
+  }
+
+  /**
+   * Changer la langue
+   * @param lang - langue
+   */
+  setLanguage(lang: any): void {
     this.selectedLanguage = lang;
+    this.translate.use(lang.code);
   }
 
-  toggle() {
+  /**
+   * Modifier l'affichage du menu
+   */
+  toggleMenu() {
     this.sidebarService.toggle(true);
     return false;
   }

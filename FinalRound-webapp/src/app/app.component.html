@@ -4,7 +4,7 @@
     <div class="header-container">
 
       <div>
-        <a class="header-menu-toggler" href="#" (click)="toggle()">
+        <a class="header-menu-toggler" href="#" (click)="toggleMenu()">
           <nb-icon icon="menu"></nb-icon>
         </a>
         <a class="header-logo" href="#">FinalRound</a>
@@ -21,7 +21,7 @@
   </nb-layout-header>
 
   <nb-sidebar>
-    <nb-menu [items]="items">
+    <nb-menu [items]="menuItems">
     </nb-menu>
   </nb-sidebar>
 
