@@ -13,6 +13,7 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 // Pages
 import { HomeComponent } from './_pages/home/home.component';
+import { TournamentsListComponent } from './_pages/tournaments-list/tournaments-list.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -22,7 +23,8 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    TournamentsListComponent
   ],
   imports: [
     AppRoutingModule,

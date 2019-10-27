@@ -1,6 +1,7 @@
 {
   "GENERAL": {},
   "MENU": {
-    "ACCUEIL": "Inicio"
+    "ACCUEIL": "Inicio",
+    "TOURNOIS_CREES": "Torneos creados"
   }
 }
