@@ -13,9 +13,32 @@
     "TOURNOI": {
       "AJOUTER": {
         "BOUTON_AJOUTER": "Aggiungi",
-        "ERREUR_CHAMP_OBLIGATOIRE": "Il campo è obbligatorio",
-        "LABEL_NOM": "Nome del torneo",
-        "TITRE": "Creare un nuovo torneo"
+        "FORMULAIRE": {
+          "BOUTON": {
+            "CREER": "Creare"
+          },
+          "CHAMP": {
+            "NOM": {
+              "ERREUR": {
+                "CHAMP_OBLIGATOIRE": {
+                  "MESSAGE": "Il campo è obbligatorio"
+                }
+              },
+              "LABEL": "Nome del torneo"
+            }
+          }
+        },
+        "TITRE": "Creare un nuovo torneo",
+        "TOAST": {
+          "ERREUR": {
+            "MESSAGE": "Si è verificato un errore, il torneo non ha potuto essere creato",
+            "TITRE": "Errore"
+          },
+          "SUCCES": {
+            "MESSAGE": "Il torneo è stato creato con successo",
+            "TITRE": "Torneo creato"
+          }
+        }
       }
     }
   }

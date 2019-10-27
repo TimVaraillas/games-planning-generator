@@ -6,18 +6,18 @@
         <form [formGroup]="addTournamentForm" (ngSubmit)="addTournament()">
 
             <div class="form-group">
-                <label class="label">{{ 'PAGES.TOURNOI.AJOUTER.LABEL_NOM' | translate }}</label>
+                <label class="label">{{ 'PAGES.TOURNOI.AJOUTER.FORMULAIRE.CHAMP.NOM.LABEL' | translate }}</label>
                 <input #tournamentName type="text" nbInput fullWidth formControlName="tournamentName" [(ngModel)]="tournament.name" [ngClass]="{
                     'input-danger': addTournamentForm.controls['tournamentName'].invalid && (addTournamentForm.controls['tournamentName'].dirty || addTournamentForm.controls['tournamentName'].touched), 
                     'input-success': addTournamentForm.controls['tournamentName'].valid && (addTournamentForm.controls['tournamentName'].dirty || addTournamentForm.controls['tournamentName'].touched)
                 }">
                 <small class="text-danger" *ngIf="addTournamentForm.controls['tournamentName'].invalid && (addTournamentForm.controls['tournamentName'].dirty || addTournamentForm.controls['tournamentName'].touched)">
-                    <span *ngIf="addTournamentForm.controls['tournamentName'].errors.required">{{ 'PAGES.TOURNOI.AJOUTER.ERREUR_CHAMP_OBLIGATOIRE' | translate }}</span>
+                    <span *ngIf="addTournamentForm.controls['tournamentName'].errors.required">{{ 'PAGES.TOURNOI.AJOUTER.FORMULAIRE.CHAMP.NOM.ERREUR.CHAMP_OBLIGATOIRE.MESSAGE' | translate }}</span>
                 </small>
             </div>
 
             <div class="form-group submit-group">
-                <button nbButton type="submit" status="primary" [disabled]="addTournamentForm.pristine || addTournamentForm.invalid">{{ 'PAGES.TOURNOI.AJOUTER.BOUTON_AJOUTER' | translate }}</button>
+                <button nbButton type="submit" status="primary" [disabled]="addTournamentForm.pristine || addTournamentForm.invalid">{{ 'PAGES.TOURNOI.AJOUTER.FORMULAIRE.BOUTON.CREER' | translate }}</button>
             </div>
 
         </form>

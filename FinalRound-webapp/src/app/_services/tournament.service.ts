@@ -12,7 +12,6 @@ export class TournamentService {
   constructor(private http: HttpClient) { }
 
   add(tournament: Tournament) {
-    console.log(tournament);
-    // this.http.post(`${this.uri}/add`, obj).subscribe(res => console.log('Done'));
+    return this.http.post(`${this.uri}/add`, tournament);
   }
 }

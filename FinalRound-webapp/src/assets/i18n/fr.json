@@ -13,9 +13,32 @@
     "TOURNOI": {
       "AJOUTER": {
         "BOUTON_AJOUTER": "Ajouter",
-        "ERREUR_CHAMP_OBLIGATOIRE": "Le champ est obligatoire",
-        "LABEL_NOM": "Nom du tournoi",
-        "TITRE": "Créer un nouveau tournoi"
+        "FORMULAIRE": {
+          "BOUTON": {
+            "CREER": "Créer"
+          },
+          "CHAMP": {
+            "NOM": {
+              "ERREUR": {
+                "CHAMP_OBLIGATOIRE": {
+                  "MESSAGE": "Le champ est obligatoire"
+                }
+              },
+              "LABEL": "Nom du tournoi"
+            }
+          }
+        },
+        "TITRE": "Créer un nouveau tournoi",
+        "TOAST": {
+          "ERREUR": {
+            "MESSAGE": "Une erreur s'est produite, le tournoi n'a pas pu être créé",
+            "TITRE": "Erreur"
+          },
+          "SUCCES": {
+            "MESSAGE": "Le tournoi a été créé avec succès",
+            "TITRE": "Tournoi créé"
+          }
+        }
       }
     }
   }
