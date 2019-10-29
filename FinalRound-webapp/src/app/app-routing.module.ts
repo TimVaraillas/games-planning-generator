@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './_pages/errors/page-not-found/page-not-f
 import { HomeComponent } from './_pages/home/home.component';
 import { TournamentsListComponent } from './_pages/tournament/list/tournaments-list.component';
 import { TournamentAddComponent } from './_pages/tournament/add/tournament-add.component';
+import { TournamentShowComponent } from './_pages/tournament/show/tournament-show.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'tournament/list', component: TournamentsListComponent },
   { path: 'tournament/add', component: TournamentAddComponent },
+  { path: 'tournament/show/:id', component: TournamentShowComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

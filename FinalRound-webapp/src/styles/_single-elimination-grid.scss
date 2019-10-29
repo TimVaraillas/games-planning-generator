@@ -1,0 +1,161 @@
+// *************************************************
+// Variable
+// *************************************************
+
+$color-line : nb-theme(color-basic-700);
+$color1 : nb-theme(color-basic-1000);
+$color2 : nb-theme(color-basic-900);
+$game-width: 250px;
+$game-height: 70px;
+$margin: 10px;
+$border-radius: 6px;
+
+// nb-theme(color-primary-500)
+// nb-theme(color-basic-1000)
+
+// *************************************************
+// Functions
+// *************************************************
+
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent>0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}
+
+// *************************************************
+// Styles
+// *************************************************
+.grid-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.grid {
+  display: flex;
+
+  .round {
+
+    margin: $margin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .game {
+      width: $game-width;
+      height: $game-height;
+      margin: $margin 0;
+
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: $game-width + 2*$margin;
+        height: 2px;
+        margin-top: ($game-height/2)-1px;
+        margin-left: -$margin;
+        background-color: $color-line;
+      }
+
+      &.game-even {
+        &:after {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 2px;
+          background-color: $color-line;
+          margin-left: $game-width + $margin - 1px;
+        }
+      }
+
+      &.game-odd {
+        &:after {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 2px;
+          background-color: $color-line;
+          margin-left: $game-width + $margin - 1px;
+        }
+      }
+
+      .competitor {
+        height: $game-height/2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .competitor.competitor1 {
+        background-color: $color1;
+        border-radius: $border-radius $border-radius 0 0;
+      }
+
+      .competitor.competitor2 {
+        background-color: $color2;
+        border-radius: 0 0 $border-radius $border-radius;
+      }
+    }
+
+    @for $i from 1 through 20 {
+
+      &:nth-child(#{$i}) {
+
+        @if ($i !=1) {
+          padding: (($game-height/2)*(pow(2, ($i)-1)-1))+($margin*(pow(2, ($i)-1)-1)) 0;
+        }
+
+        .game-even {
+          &:after {
+            height: ($game-height/2)*(pow(2, $i)-1) + $margin*(pow(2, $i)-1) + 1;
+            margin-top: -($game-height/2)-1px;
+          }
+        }
+
+        .game-odd {
+          &:after {
+            height: ($game-height/2)*(pow(2, $i)-1) + $margin*(pow(2, $i)-1) + 1;
+            margin-top: -(($game-height/2)*(pow(2, $i)-1) + $margin*(pow(2, $i)-1) + 1) - ($game-height/2) + 1;
+          }
+        }
+
+      }
+
+    }
+
+    &:first-child {
+      .game {
+        &:before {
+          width: $game-width + $margin;
+          margin-left: 0;
+        }
+      }
+    }
+
+    &:last-child {
+      .game {
+        &:before {
+          width: $game-width + $margin;
+          margin-left: -$margin;
+        }
+      }
+
+      .game,
+      .game-even,
+      .game-odd {
+        &:after {
+          display: none !important;
+        }
+      }
+    }
+
+  }
+
+}

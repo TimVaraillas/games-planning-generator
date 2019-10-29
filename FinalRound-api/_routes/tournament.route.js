@@ -21,9 +21,7 @@ tournamentRoutes.route('/add').post(function (req, res) {
     let tournament = new Tournament(req.body);
     tournament.save()
         .then(tournament => {
-            res.status(200).json({
-                'tournament': 'tournament in added successfully'
-            });
+            res.status(200).json(tournament);
         })
         .catch(err => {
             res.status(400).send("unable to save to database");
@@ -34,9 +32,9 @@ tournamentRoutes.route('/add').post(function (req, res) {
 tournamentRoutes.route('/delete/:id').delete(function (req, res) {
     Tournament.findByIdAndRemove({
         _id: req.params.id
-    }, function (err, business) {
+    }, function (err, tournament) {
         if (err) res.json(err);
-        else res.json('Successfully removed');
+        else res.json(tournament);
     });
 });
 

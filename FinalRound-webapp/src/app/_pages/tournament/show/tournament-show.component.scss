@@ -1,0 +1,24 @@
+nb-card-body, nb-tab {
+    overflow: hidden;
+}
+.content-active {
+    padding: 1em 0;
+}
+
+.grid-scroll-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    opacity: 0;
+    position: absolute;
+    top: 200px;
+    bottom: 0;
+    width: 20%;
+}
+.grid-scroll-arrow-right {
+    right: 0;
+}
+.grid-scroll-arrow-left {
+    left: 0;
+}
