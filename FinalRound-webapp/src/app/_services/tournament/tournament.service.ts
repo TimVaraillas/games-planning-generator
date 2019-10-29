@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import Tournament from '../_models/tournament';
+import { Tournament } from '../../_models/tournament';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -12,7 +12,6 @@ export class TournamentService {
   constructor(private http: HttpClient) { }
 
   get() {
-    console.log('list');
     return this.http.get(`${this.uri}`);
   }
 

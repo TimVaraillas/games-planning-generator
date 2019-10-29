@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
 import { NbSidebarService, NbIconLibraries, NbMenuService } from '@nebular/theme';
-import { icons } from '../utils/icons';
+import { icons } from '../config/icons';
 import { filter } from 'rxjs/operators';
 
 @Component({
@@ -53,8 +53,7 @@ export class AppComponent {
     this.translate.get(['MENU.ACCUEIL', 'MENU.VOS_TOURNOIS']).subscribe((res: string[]) => {
       this.menuItems = [
         { title: res['MENU.ACCUEIL'], icon: { icon: 'home', pack: 'fas' }, link: "/" },
-        { title: res['MENU.VOS_TOURNOIS'], icon: { icon: 'trophy', pack: 'fas' }, link: "/tournament/list" },
-        { title: 'Ajouter un tournoi', icon: { icon: 'plus', pack: 'fas' }, link: "/tournament/add" }
+        { title: res['MENU.VOS_TOURNOIS'], icon: { icon: 'trophy', pack: 'fas' }, link: "/tournament/list" }
       ]
     });
   }

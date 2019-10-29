@@ -1,0 +1,39 @@
+.nb-theme-dark {
+    ng2-smart-table {
+        .ng2-smart-actions {
+            a.ng2-smart-action {
+                font-size: initial !important;
+            }
+        }
+
+        input.form-control {
+            background-color: nb-theme(color-basic-900);
+            border-color: nb-theme(color-basic-1000);
+            border-style: solid;
+            border-width: 1px;
+            border-radius: nb-theme(border-radius);
+            color: nb-theme(color-basic-100);
+            -webkit-appearance: none;
+            transition-duration: 0.15s;
+            transition-property: border, background-color, color, box-shadow;
+            transition-timing-function: ease-in;
+        }
+
+        .ng2-smart-pagination-nav {
+            ul.ng2-smart-pagination {
+
+                background-color: nb-theme(color-basic-800);
+                border-color: nb-theme(color-basic-900);
+                
+                li {
+                    line-height: 2.5rem;
+
+                    a {
+                        color: nb-theme(color-basic-100);
+                    }
+                }
+            }
+        }
+
+    }
+}

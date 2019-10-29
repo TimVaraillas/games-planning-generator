@@ -6,7 +6,9 @@
   @include nb-theme-global();
 };
 
-@import './styles/tables.scss';
+@import './styles/_single-elimination-grid';
+@import './styles/smart-tables';
+@import './styles/_tables';
 
 input {
   margin: .5em 0;
@@ -20,3 +22,9 @@ input {
 .input-warning {
   border-color: nb-theme(color-warning-500) !important;
 }
+
+
+nb-tab {
+  overflow: hidden !important;
+}
+

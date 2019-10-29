@@ -1,30 +1,10 @@
+<firo-tournament-add (added)="tournamentAdded($event)"></firo-tournament-add>
+
 <nb-card accent="primary">
-    
-        <nb-card-header>{{ 'PAGES.TOURNOI.LISTE.TITRE' | translate }}</nb-card-header>
-        
-        <nb-card-body>
-
-            <div class="table-container">
-                <div class="table">
-    
-                    <div class="row header">
-                        <div class="cell">{{ 'PAGES.TOURNOI.LISTE.TABLEAU.CHAMP.NOM.LABEL' | translate }}</div>
-                        <div class="cell"></div>
-                    </div>
-    
-                    <div class="row" *ngFor="let tournament of tournaments">
-                        <div class="cell">{{ tournament.name }}</div>
-                        <div class="cell pull-right">
-                            <button nbTooltip="{{ 'PAGES.TOURNOI.LISTE.TABLEAU.ACTION.SUPPRIMER.LABEL' | translate }}" nbTooltipStatus="danger" nbButton status="danger" outline (click)="deleteTournament(tournament._id)">
-                                <nb-icon icon="trash" pack="fas"></nb-icon>
-                            </button>
-                        </div>
-                    </div>
-    
-                </div>
-            </div>
-
-
-        </nb-card-body>
-    
-    </nb-card>
+    <nb-card-header>{{ 'PAGES.TOURNOI.LISTE.TITRE' | translate }}</nb-card-header>
+    <nb-card-body>
+        <div class="table-container">
+            <ng2-smart-table [settings]="settings" [source]="source" (delete)="deleteTournament($event)" (userRowSelect)="showTournament($event)"></ng2-smart-table>
+        </div>
+    </nb-card-body>
+</nb-card>
