@@ -1,12 +1,12 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 const tournamentRoutes = express.Router();
 
 // Require Business model in our routes module
-let Tournament = require('../_models/Tournament');
+let Tournament = require("../_models/Tournament");
 
 // GET /
-tournamentRoutes.route('/').get(function (req, res) {
+tournamentRoutes.route("/").get(function (req, res) {
     Tournament.find(function (err, tournaments) {
         if (err) {
             console.log(err);
@@ -17,7 +17,7 @@ tournamentRoutes.route('/').get(function (req, res) {
 });
 
 // POST /add
-tournamentRoutes.route('/add').post(function (req, res) {
+tournamentRoutes.route("/add").post(function (req, res) {
     let tournament = new Tournament(req.body);
     tournament.save()
         .then(tournament => {
@@ -29,7 +29,7 @@ tournamentRoutes.route('/add').post(function (req, res) {
 });
 
 // DELETE /delete/:id
-tournamentRoutes.route('/delete/:id').delete(function (req, res) {
+tournamentRoutes.route("/delete/:id").delete(function (req, res) {
     Tournament.findByIdAndRemove({
         _id: req.params.id
     }, function (err, tournament) {
@@ -39,7 +39,7 @@ tournamentRoutes.route('/delete/:id').delete(function (req, res) {
 });
 
 // // Defined edit route
-// tournamentRoutes.route('/edit/:id').get(function (req, res) {
+// tournamentRoutes.route("/edit/:id").get(function (req, res) {
 //     let id = req.params.id;
 //     Business.findById(id, function (err, business) {
 //         res.json(business);
@@ -47,17 +47,17 @@ tournamentRoutes.route('/delete/:id').delete(function (req, res) {
 // });
 
 // //  Defined update route
-// tournamentRoutes.route('/update/:id').post(function (req, res) {
+// tournamentRoutes.route("/update/:id").post(function (req, res) {
 //     Business.findById(req.params.id, function (err, next, business) {
 //         if (!business)
-//             return next(new Error('Could not load Document'));
+//             return next(new Error("Could not load Document"));
 //         else {
 //             business.person_name = req.body.person_name;
 //             business.business_name = req.body.business_name;
 //             business.business_gst_number = req.body.business_gst_number;
 
 //             business.save().then(business => {
-//                     res.json('Update complete');
+//                     res.json("Update complete");
 //                 })
 //                 .catch(err => {
 //                     res.status(400).send("unable to update the database");

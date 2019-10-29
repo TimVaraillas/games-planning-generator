@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 let Tournament = new Schema({
@@ -6,7 +6,7 @@ let Tournament = new Schema({
     type: String
   }
 },{
-    collection: 'tournament'
+    collection: "tournament"
 });
 
-module.exports = mongoose.model('Tournament', Tournament);
+module.exports = mongoose.model("Tournament", Tournament);
