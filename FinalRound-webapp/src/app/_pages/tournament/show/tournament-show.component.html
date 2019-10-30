@@ -10,13 +10,18 @@
             <label class="info-label">Nom</label>
             <p class="info-value">{{ tournament.name }}</p>
           </div>
+
+          <div class="info-actions">
+            <button nbButton type="submit" status="danger" class="pull-right" (click)="deleteTournament()">Supprimer</button>
+          </div>
         </div>
 
       </nb-tab>
 
       <nb-tab tabTitle="Compétiteurs" responsive>
 
-        <ng2-smart-table [settings]="smartTableSettings" [source]="smartTableSource" (create)="expandSidebar()" (delete)="deleteTournament($event)" (userRowSelect)="showTournament($event)"></ng2-smart-table>
+        <ng2-smart-table [settings]="smartTableSettings" [source]="smartTableSource" (create)="expandSidebar()"
+          (delete)="deleteTournament($event)" (userRowSelect)="showTournament($event)"></ng2-smart-table>
 
       </nb-tab>
 
