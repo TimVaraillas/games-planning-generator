@@ -10,11 +10,11 @@ import { FiroSidebarComponent } from 'src/app/_components/firo-sidebar/firo-side
 import { TournamentUpdateComponent } from '../update/tournament-update.component';
 
 @Component({
-  selector: 'app-tournaments-list',
-  templateUrl: './tournaments-list.component.html',
-  styleUrls: ['./tournaments-list.component.scss']
+  selector: 'app-tournament-list',
+  templateUrl: './tournament-list.component.html',
+  styleUrls: ['./tournament-list.component.scss']
 })
-export class TournamentsListComponent implements OnInit {
+export class TournamentListComponent implements OnInit {
 
   @ViewChild('addSidebar', { static: false })
   addSidebar: FiroSidebarComponent;

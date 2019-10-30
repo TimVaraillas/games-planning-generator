@@ -25,7 +25,7 @@ import { FiroSidebarComponent } from './_components/firo-sidebar/firo-sidebar.co
 // Pages
 import { AppComponent } from './app.component';
 import { HomeComponent } from './_pages/home/home.component';
-import { TournamentsListComponent } from './_pages/tournament/list/tournaments-list.component';
+import { TournamentListComponent } from './_pages/tournament/list/tournament-list.component';
 import { PageNotFoundComponent } from './_pages/errors/page-not-found/page-not-found.component';
 import { TournamentAddComponent } from './_pages/tournament/add/tournament-add.component';
 import { TournamentShowComponent } from './_pages/tournament/show/tournament-show.component';
@@ -41,7 +41,7 @@ export function createTranslateLoader(http: HttpClient) {
     AppComponent,
     FiroSidebarComponent,
     HomeComponent,
-    TournamentsListComponent,
+    TournamentListComponent,
     PageNotFoundComponent,
     TournamentAddComponent,
     TournamentShowComponent,
