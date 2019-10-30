@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NbSidebarService } from '@nebular/theme';
 
 @Component({
@@ -8,6 +8,9 @@ import { NbSidebarService } from '@nebular/theme';
 })
 export class FiroSidebarComponent implements OnInit {
 
+  @Input()
+  tag: string;
+
   constructor(
     private sidebarService: NbSidebarService,
   ) { }
@@ -16,15 +19,15 @@ export class FiroSidebarComponent implements OnInit {
   }
 
   toggle() {
-    this.sidebarService.toggle(false, 'firo-sidebar');
+    this.sidebarService.toggle(false, this.tag);
   }
 
   expand() {
-    this.sidebarService.expand('firo-sidebar');
+    this.sidebarService.expand(this.tag);
   }
 
   collapse() {
-    this.sidebarService.collapse('firo-sidebar');
+    this.sidebarService.collapse(this.tag);
   }
 
 }
