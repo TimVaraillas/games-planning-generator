@@ -7,12 +7,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TournamentService {
 
-  uri = 'http://localhost:4000/tournament';
+  uri = "http://localhost:4000/tournament";
 
   constructor(private http: HttpClient) { }
 
-  get() {
+  getAll() {
     return this.http.get(`${this.uri}`);
+  }
+
+  getOne(id: String) {
+    return this.http.get(`${this.uri}/${id}`);
   }
 
   add(tournament: Tournament) {

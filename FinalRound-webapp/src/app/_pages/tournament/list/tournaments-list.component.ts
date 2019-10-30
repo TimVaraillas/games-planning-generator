@@ -44,7 +44,7 @@ export class TournamentsListComponent implements OnInit {
   }
 
   getTournaments() {
-    this.tournamentService.get().subscribe((tournaments: Tournament[]) => {
+    this.tournamentService.getAll().subscribe((tournaments: Tournament[]) => {
       this.source.load(tournaments);
     });
   }

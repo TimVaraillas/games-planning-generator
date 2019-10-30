@@ -25,5 +25,8 @@ export const SETTINGS = {
     filter: {
       inputClass: 'form-control'
     },
-    hideSubHeader: false
+    hideSubHeader: false,
+    pager: {
+      perPage: 20
+    }
   };

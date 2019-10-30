@@ -3,29 +3,26 @@
 
     <nb-tabset>
 
+      <nb-tab tabTitle="Informations générales" responsive>
+
+        <div class="info-container">
+          <div class="info-group">
+            <label class="info-label">Nom</label>
+            <p class="info-value">{{ tournament.name }}</p>
+          </div>
+        </div>
+
+      </nb-tab>
+
       <nb-tab tabTitle="Compétiteurs" responsive>
-        
-            <div class="table-container">
-                <div class="table">
-    
-                    <div class="row header">
-                        <div class="cell">Nom du compétiteur</div>
-                        <div class="cell"></div>
-                    </div>
-    
-                    <div class="row" *ngFor="let competitor of tournament.competitors">
-                        <div class="cell">{{ competitor.name }}</div>
-                        <div class="cell pull-right"></div>
-                    </div>
-    
-                </div>
-            </div>
+
+        <ng2-smart-table [settings]="smartTableSettings" [source]="smartTableSource" (create)="expandSidebar()" (delete)="deleteTournament($event)" (userRowSelect)="showTournament($event)"></ng2-smart-table>
 
       </nb-tab>
 
       <nb-tab tabTitle="Bracket" responsive>
-        
-            <button nbButton status="primary" (click)="generateSingleEliminationGrid()">Générer le bracket</button>
+
+        <!-- <button nbButton status="primary" (click)="generateSingleEliminationGrid()">Générer le bracket</button>
             
             <div class="grid-container" #gridContainer>
                 <div class="grid">
@@ -38,8 +35,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        
+            </div> -->
+
       </nb-tab>
 
     </nb-tabset>
