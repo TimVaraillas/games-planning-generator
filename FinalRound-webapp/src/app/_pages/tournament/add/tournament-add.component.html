@@ -1,11 +1,6 @@
 <nb-card>
     
-    <nb-card-header>
-        <button nbButton ghost (click)="cancel()">
-          <nb-icon icon="times" pack="fas"></nb-icon>
-        </button>
-      {{ 'PAGES.TOURNOI.AJOUTER.TITRE' | translate }}
-    </nb-card-header>
+    <nb-card-header>{{ 'PAGES.TOURNOI.AJOUTER.TITRE' | translate }}</nb-card-header>
     
     <nb-card-body>
         <form [formGroup]="addTournamentForm" (ngSubmit)="addTournament()">

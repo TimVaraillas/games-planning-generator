@@ -19,6 +19,9 @@ import { AppRoutingModule } from './app-routing.module';
 // Module Ng2SmartTable
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 
+// Components FinalRound
+
+import { FiroSidebarComponent } from './_components/firoSidebar/firo-sidebar/firo-sidebar.component';
 // Pages
 import { AppComponent } from './app.component';
 import { HomeComponent } from './_pages/home/home.component';
@@ -35,11 +38,12 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
+    FiroSidebarComponent,
     HomeComponent,
     TournamentsListComponent,
     PageNotFoundComponent,
     TournamentAddComponent,
-    TournamentShowComponent
+    TournamentShowComponent,
   ],
   imports: [
     AppRoutingModule,
