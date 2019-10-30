@@ -1,5 +1,17 @@
 .nb-theme-dark {
     ng2-smart-table {
+
+        thead {
+            tr.ng2-smart-titles {
+                background-color: nb-theme(color-basic-900);
+                th {
+                    a {
+                        font-weight: 800;
+                    }
+                }
+            }
+        }
+
         .ng2-smart-actions {
             a.ng2-smart-action {
                 font-size: initial !important;

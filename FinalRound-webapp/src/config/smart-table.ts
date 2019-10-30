@@ -27,6 +27,6 @@ export const SETTINGS = {
     },
     hideSubHeader: false,
     pager: {
-      perPage: 20
+      perPage: 15
     }
   };

@@ -33,7 +33,7 @@ export class TournamentShowComponent implements OnInit {
     private router: Router,
     private tournamentService: TournamentService
   ) {
-    this.smartTableSettings.columns = { name: { title: 'Nom du tournoi', filter: true, width: '90%' } }; 
+    this.smartTableSettings.columns = { name: { title: 'Nom du compétiteur', filter: true, width: '90%' } }; 
     this.smartTableSettings.actions.edit = false;
     this.getTournament();
   }
