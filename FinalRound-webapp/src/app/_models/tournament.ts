@@ -3,6 +3,7 @@ import * as _ from 'lodash';
 
 export class Tournament {
 
+    _id: String;
     name: String;
     competitors: Competitor[];
 

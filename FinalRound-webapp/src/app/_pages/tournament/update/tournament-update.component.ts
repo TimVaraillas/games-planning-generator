@@ -1,23 +1,31 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NbToastrService, NbGlobalLogicalPosition } from '@nebular/theme';
-import { TranslateService } from '@ngx-translate/core';
 import { Tournament } from 'src/app/_models/tournament';
+import { TranslateService } from '@ngx-translate/core';
 import { TournamentService } from 'src/app/_services/tournament/tournament.service';
 
 @Component({
-  selector: 'app-tournament-add',
-  templateUrl: './tournament-add.component.html',
-  styleUrls: ['./tournament-add.component.scss']
+  selector: 'app-tournament-update',
+  templateUrl: './tournament-update.component.html',
+  styleUrls: ['./tournament-update.component.scss']
 })
-export class TournamentAddComponent implements OnInit {
+export class TournamentUpdateComponent implements OnInit {
 
+  @Input()
+  set id(id: string) {
+    console.log('id', id)
+    this._id = id;
+    this.getTournament();
+  }
+  
   @Output()
-  added: EventEmitter<Tournament> = new EventEmitter<Tournament>();
-
+  updated: EventEmitter<Tournament> = new EventEmitter<Tournament>();
+  
   translations: any;
-
-  addTournamentForm: FormGroup;
+  
+  _id: string;
+  updateTournamentForm: FormGroup;
   tournament: Tournament;
 
   constructor(
@@ -29,7 +37,7 @@ export class TournamentAddComponent implements OnInit {
     this.createForm();
     this.tournament = new Tournament();
   }
-
+  
   ngOnInit() {
     this.getTranslations();
   }
@@ -43,24 +51,28 @@ export class TournamentAddComponent implements OnInit {
     ]).subscribe((res: string[]) => {
       this.translations = res;
     });
+  } 
+
+  getTournament() {
+    this.tournamentService.getOne(this._id).subscribe((tournament: Tournament) => this.tournament = tournament);
   }
 
   createForm() {
-    this.addTournamentForm = this.fb.group({
+    this.updateTournamentForm = this.fb.group({
       tournamentName: ['', Validators.required ],
     });
   }
 
-  addTournament() {
-    this.tournamentService.add(this.tournament)
+  updateTournament() {
+    this.tournamentService.update(this.tournament)
       .subscribe((tournament: Tournament) => {
         this.toastr.show(
           this.translations['PAGES.TOURNOI.AJOUTER.TOAST.SUCCES.MESSAGE'],
           this.translations['PAGES.TOURNOI.AJOUTER.TOAST.SUCCES.TITRE'],
           { position: NbGlobalLogicalPosition.BOTTOM_END, status: 'success' }
         );
-        this.addTournamentForm.reset();
-        this.added.emit(tournament);
+        this.updateTournamentForm.reset();
+        this.updated.emit(tournament);
       }, (error) => {
         this.toastr.show(
           this.translations['PAGES.TOURNOI.AJOUTER.TOAST.ERREUR.MESSAGE'],

@@ -21,7 +21,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 // Components FinalRound
 
-import { FiroSidebarComponent } from './_components/firoSidebar/firo-sidebar/firo-sidebar.component';
+import { FiroSidebarComponent } from './_components/firo-sidebar/firo-sidebar.component';
 // Pages
 import { AppComponent } from './app.component';
 import { HomeComponent } from './_pages/home/home.component';
@@ -29,6 +29,7 @@ import { TournamentsListComponent } from './_pages/tournament/list/tournaments-l
 import { PageNotFoundComponent } from './_pages/errors/page-not-found/page-not-found.component';
 import { TournamentAddComponent } from './_pages/tournament/add/tournament-add.component';
 import { TournamentShowComponent } from './_pages/tournament/show/tournament-show.component';
+import { TournamentUpdateComponent } from './_pages/tournament/update/tournament-update.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -44,6 +45,7 @@ export function createTranslateLoader(http: HttpClient) {
     PageNotFoundComponent,
     TournamentAddComponent,
     TournamentShowComponent,
+    TournamentUpdateComponent,
   ],
   imports: [
     AppRoutingModule,

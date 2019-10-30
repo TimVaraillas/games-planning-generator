@@ -23,6 +23,10 @@ export class TournamentService {
     return this.http.post(`${this.uri}/add`, tournament);
   }
 
+  update(tournament: Tournament) {
+    return this.http.put(`${this.uri}/update/${tournament._id}`, tournament);
+  }
+
   delete(id: String) {
     return this.http.delete(`${this.uri}/delete/${id}`);
   }
