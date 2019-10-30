@@ -71,7 +71,7 @@ export class AppComponent {
    * Modifier l'affichage du menu
    */
   toggleMenu() {
-    this.sidebarService.toggle(true);
+    this.sidebarService.toggle(true, 'left');
     return false;
   }
 }

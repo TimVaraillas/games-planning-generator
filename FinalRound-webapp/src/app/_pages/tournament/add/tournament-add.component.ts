@@ -13,7 +13,9 @@ import { TournamentService } from 'src/app/_services/tournament/tournament.servi
 export class TournamentAddComponent implements OnInit {
 
   @Output()
-  added: EventEmitter<Tournament> = new EventEmitter<Tournament>()
+  added: EventEmitter<Tournament> = new EventEmitter<Tournament>();
+  @Output()
+  canceled: EventEmitter<any> = new EventEmitter<any>();
 
   addTournamentForm: FormGroup;
   tournament: Tournament;
@@ -51,6 +53,10 @@ export class TournamentAddComponent implements OnInit {
           });
         }
       );
+  }
+
+  cancel() {
+    this.canceled.emit();
   }
 
 }

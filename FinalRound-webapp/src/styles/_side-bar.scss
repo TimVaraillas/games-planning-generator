@@ -1,0 +1,9 @@
+nb-sidebar.right{
+  .main-container {
+    position: fixed;
+    right: 0;
+    width: 50vw;
+    background-color: nb-theme(color-basic-700);
+    box-shadow: -0.5rem -0.5rem 1rem 0 nb-theme(color-basic-1100);
+  }
+}

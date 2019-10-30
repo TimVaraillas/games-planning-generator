@@ -6,8 +6,9 @@
   @include nb-theme-global();
 };
 
+@import './styles/_side-bar';
 @import './styles/_single-elimination-grid';
-@import './styles/smart-tables';
+@import './styles/_smart-tables';
 
 input {
   margin: .5em 0;
@@ -25,5 +26,9 @@ input {
 
 nb-tab {
   overflow: hidden !important;
+}
+
+.pull-right {
+  float: right;
 }
 

@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { TournamentService } from 'src/app/_services/tournament/tournament.service';
-import { Tournament } from 'src/app/_models/tournament';
-import { TranslateService } from '@ngx-translate/core';
-import { NbToastrService, NbGlobalLogicalPosition } from '@nebular/theme';
 import { Router } from '@angular/router';
 import { LocalDataSource } from 'ng2-smart-table';
 import { SETTINGS } from 'src/config/smart-table';
+import { TournamentService } from 'src/app/_services/tournament/tournament.service';
+import { NbToastrService, NbSidebarService, NbGlobalLogicalPosition } from '@nebular/theme';
+import { TranslateService } from '@ngx-translate/core';
+import { Tournament } from 'src/app/_models/tournament';
 
 @Component({
   selector: 'app-tournaments-list',
@@ -19,12 +19,12 @@ export class TournamentsListComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private sidebarService: NbSidebarService,
     private toastr: NbToastrService,
     private tournamentService: TournamentService,
     private translate: TranslateService
   ) {
     this.settings.columns = { name: { title: 'Nom du tournoi', filter: true, width: '90%' } }; 
-    this.settings.actions.add = false;
     this.settings.actions.edit = false;
     this.getTournaments();
   }
@@ -38,8 +38,13 @@ export class TournamentsListComponent implements OnInit {
     });
   }
 
+  toggleAddSidePanel() {
+    this.sidebarService.toggle(false, 'right');
+  }
+
   tournamentAdded(tournament: Tournament) {
     this.source.append(tournament);
+    this.toggleAddSidePanel();
   }
 
   showTournament(event: any) {

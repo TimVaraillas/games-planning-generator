@@ -1,10 +1,12 @@
-<firo-tournament-add (added)="tournamentAdded($event)"></firo-tournament-add>
-
 <nb-card accent="primary">
     <nb-card-header>{{ 'PAGES.TOURNOI.LISTE.TITRE' | translate }}</nb-card-header>
     <nb-card-body>
         <div class="table-container">
-            <ng2-smart-table [settings]="settings" [source]="source" (delete)="deleteTournament($event)" (userRowSelect)="showTournament($event)"></ng2-smart-table>
+            <ng2-smart-table [settings]="settings" [source]="source" (create)="toggleAddSidePanel()" (delete)="deleteTournament($event)" (userRowSelect)="showTournament($event)"></ng2-smart-table>
         </div>
     </nb-card-body>
 </nb-card>
+
+<nb-sidebar right tag="right" state="collapsed">
+  <firo-tournament-add (added)="tournamentAdded($event)" (canceled)="toggleAddSidePanel()"></firo-tournament-add>
+</nb-sidebar>
