@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TournamentService {
 
-  uri = "http://localhost:4000/tournament";
+  uri = "http://localhost:3000/tournament";
 
   constructor(private http: HttpClient) { }
 
