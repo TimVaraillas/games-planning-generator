@@ -3,10 +3,10 @@
     <div class="form-container">
       <div class="form-header">
         <h1>Connectez-vous</h1>
-        <p>Identifiez-vous grâce à votre adresse email</p>
+        <p>Pas encore membre ? <button nbButton outline size="tiny" status="primary" [routerLink]="['/register']">Rejoignez-nous</button></p>
       </div>
       <form [formGroup]="loginForm" (ngSubmit)="login()">
-  
+
         <div class="form-group">
           <label class="label">Adresse email</label>
           <input type="email" nbInput fullWidth formControlName="email" [ngClass]="{
@@ -14,11 +14,11 @@
             'input-success': loginForm.controls.email.valid && loginForm.controls.email.touched
           }">
           <small class="text-danger" *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched">
-              <span *ngIf="loginForm.controls.email.errors.required">{{ 'PAGES.TOURNOI.AJOUTER.FORMULAIRE.CHAMP.NOM.ERREUR.CHAMP_OBLIGATOIRE.MESSAGE' | translate }}</span>
-              <span *ngIf="loginForm.controls.email.errors.email">L'adresse email n'est pas valide</span>
+            <span *ngIf="loginForm.controls.email.errors.required">{{ 'PAGES.TOURNOI.AJOUTER.FORMULAIRE.CHAMP.NOM.ERREUR.CHAMP_OBLIGATOIRE.MESSAGE' | translate }}</span>
+            <span *ngIf="loginForm.controls.email.errors.email">L'adresse email n'est pas valide</span>
           </small>
         </div>
-  
+
         <div class="form-group">
           <label class="label">Mot de passe</label>
           <input type="password" nbInput fullWidth formControlName="password" [ngClass]="{
@@ -26,16 +26,15 @@
             'input-success': loginForm.controls.password.valid && loginForm.controls.password.touched
           }">
           <small class="text-danger" *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">
-              <span *ngIf="loginForm.controls.password.errors.required">{{ 'PAGES.TOURNOI.AJOUTER.FORMULAIRE.CHAMP.NOM.ERREUR.CHAMP_OBLIGATOIRE.MESSAGE' | translate }}</span>
+            <span *ngIf="loginForm.controls.password.errors.required">{{ 'PAGES.TOURNOI.AJOUTER.FORMULAIRE.CHAMP.NOM.ERREUR.CHAMP_OBLIGATOIRE.MESSAGE' | translate }}</span>
           </small>
         </div>
-  
+
         <div class="form-group submit-group">
-            <button nbButton fullWidth type="submit" status="success">C'est parti !</button>
+          <button nbButton fullWidth type="submit" status="success" [disabled]="loginForm.pristine || loginForm.invalid">C'est parti !</button>
         </div>
       </form>
 
     </div>
   </nb-card-body>
 </nb-card>
-
