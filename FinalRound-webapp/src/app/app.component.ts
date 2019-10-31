@@ -14,10 +14,8 @@ export class AppComponent {
     private translate: TranslateService,
     private iconLibraries: NbIconLibraries,
   ) {
-
     icons.addIcons(this.iconLibraries); // Ajouter les pack d'icones personnalisées
     this.translate.setDefaultLang('fr'); // Définir le langage par défaut
-
   }
 
 }

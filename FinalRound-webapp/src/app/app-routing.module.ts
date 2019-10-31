@@ -34,13 +34,7 @@ const routes: Routes = [
       { path: 'register', component: RegisterComponent },
       { path: '**', component: PageNotFoundComponent }
     ]
-  },
-
-  // { path: '', redirectTo: 'home', pathMatch: 'full' },
-  // { path: 'home', component: HomeComponent },
-  // { path: 'tournament/list', component: TournamentListComponent },
-  // { path: 'tournament/show/:id', component: TournamentShowComponent },
-  // { path: '**', component: PageNotFoundComponent }
+  }
 ];
 
 @NgModule({
