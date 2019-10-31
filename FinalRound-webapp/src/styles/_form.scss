@@ -10,6 +10,19 @@ input {
 .input-warning {
   border-color: nb-theme(color-warning-500) !important;
 }
+.form-input-error {
+  margin: -0.5em 0 0.5em;
+}
+.form-input-tips {
+  margin: .5em 0;
+  padding: 1rem;
+  background-color: nb-theme(color-basic-700);
+  border-radius: .25rem;
+  border: 1px solid nb-theme(color-basic-900);
+  small {
+    display: block;
+  }
+}
 .form-container {
   margin: 1.5rem 0;
   .form-header{

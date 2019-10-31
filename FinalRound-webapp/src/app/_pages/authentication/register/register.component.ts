@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, ElementRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CustomValidators } from 'src/app/_class/validators/custom-validators';
 
@@ -31,12 +31,13 @@ export class RegisterComponent implements OnInit {
         CustomValidators.patternValidator(/[A-Z]/, { hasCapitalCase: true }), // au moins une majuscule
         CustomValidators.patternValidator(/[a-z]/, { hasSmallCase: true }), // au moins une minuscule
         CustomValidators.patternValidator(/[!?@#$%^&*()_+-=\[\]{};':"|,.<>\/?]/, { hasSpecialCharacters: true }),
-      ])]
-    });
+      ])],
+      confirmPassword: ['', Validators.required]
+    }, {validator: CustomValidators.passwordMatchValidator });
   }
 
   register() {
-    console.log('register');
+    console.log(this.registerForm);
   }
 
 }
