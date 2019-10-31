@@ -30,6 +30,10 @@ import { PageNotFoundComponent } from './_pages/errors/page-not-found/page-not-f
 import { TournamentAddComponent } from './_pages/tournament/add/tournament-add.component';
 import { TournamentShowComponent } from './_pages/tournament/show/tournament-show.component';
 import { TournamentUpdateComponent } from './_pages/tournament/update/tournament-update.component';
+import { RegisterComponent } from './_pages/authentication/register/register.component';
+import { LoginComponent } from './_pages/authentication/login/login.component';
+import { BlankLayoutComponent } from './_layouts/blank-layout/blank-layout.component';
+import { MainLayoutComponent } from './_layouts/main-layout/main-layout.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -46,6 +50,10 @@ export function createTranslateLoader(http: HttpClient) {
     TournamentAddComponent,
     TournamentShowComponent,
     TournamentUpdateComponent,
+    RegisterComponent,
+    LoginComponent,
+    BlankLayoutComponent,
+    MainLayoutComponent,
   ],
   imports: [
     AppRoutingModule,
