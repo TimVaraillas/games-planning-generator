@@ -1,0 +1,28 @@
+input {
+  margin: .5em 0;
+}
+.input-success {
+  border-color: nb-theme(color-success-500) !important;
+}
+.input-danger {
+  border-color: nb-theme(color-danger-500) !important;
+}
+.input-warning {
+  border-color: nb-theme(color-warning-500) !important;
+}
+.form-container {
+  margin: 1.5rem 0;
+  .form-header{
+    text-align: center;
+    margin-bottom: 1.5rem;
+    h1 {
+      margin-bottom: .5rem;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}
+.submit-group {
+  margin: 20px 0 10px 0;
+}

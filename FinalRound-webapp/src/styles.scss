@@ -1,28 +1,17 @@
 @import './styles/themes.scss';
 
 @import '~@nebular/theme/styles/globals';
+@import '~@nebular/bootstrap/styles/globals';
 
 @include nb-install() {
   @include nb-theme-global();
+  @include nb-bootstrap-global();
 };
 
+@import './styles/_form';
 @import './styles/_side-bar';
 @import './styles/_single-elimination-grid';
 @import './styles/_smart-tables';
-
-input {
-  margin: .5em 0;
-}
-.input-success {
-  border-color: nb-theme(color-success-500) !important;
-}
-.input-danger {
-  border-color: nb-theme(color-danger-500) !important;
-}
-.input-warning {
-  border-color: nb-theme(color-warning-500) !important;
-}
-
 
 nb-tab {
   overflow: hidden !important;
