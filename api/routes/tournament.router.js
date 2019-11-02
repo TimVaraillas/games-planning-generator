@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var Tournament = require("../models/Tournament");
+var Tournament = require("../models/tournament.model");
 
 // GET /tournament
 router.route("/").get(function (req, res) {
