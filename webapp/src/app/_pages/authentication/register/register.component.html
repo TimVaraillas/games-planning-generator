@@ -2,53 +2,53 @@
   <nb-card-body>
     <div class="form-container">
       <div class="form-header">
-        <h1>Rejoignez-nous</h1>
-        <p>Déjà membre ? <button nbButton outline size="tiny" status="primary" [routerLink]="['/login']">Connectez-vous</button></p>
+        <h1>{{ 'AUTHENTIFICATION.ENREGISTREMENT.TITRE' | translate }}</h1>
+        <p>{{ 'AUTHENTIFICATION.ENREGISTREMENT.SOUS_TITRE.TEXTE' | translate }}<button nbButton outline size="tiny" status="primary" [routerLink]="['/login']">{{ 'AUTHENTIFICATION.ENREGISTREMENT.SOUS_TITRE.BOUTON' | translate }}</button></p>
       </div>
       <form [formGroup]="registerForm" (ngSubmit)="register()">
 
         <div class="form-group">
-          <label class="label">Prénom</label>
-          <input type="text" nbInput fullWidth formControlName="firstname" [ngClass]="{
+          <label class="label">{{ 'AUTHENTIFICATION.ENREGISTREMENT.FORMULAIRE.PRENOM' | translate }}</label>
+          <input type="text" nbInput fullWidth formControlName="firstname" [(ngModel)]="user.firstname" [ngClass]="{
               'input-danger': registerForm.controls.firstname.invalid && registerForm.controls.firstname.touched, 
               'input-success': registerForm.controls.firstname.valid && registerForm.controls.firstname.touched
             }">
           <div class="form-input-error text-danger" *ngIf="registerForm.controls.firstname.invalid && registerForm.controls.firstname.touched">
-            <small *ngIf="registerForm.controls.firstname.errors.required">{{ 'PAGES.TOURNOI.AJOUTER.FORMULAIRE.CHAMP.NOM.ERREUR.CHAMP_OBLIGATOIRE.MESSAGE' | translate }}</small>
+            <small *ngIf="registerForm.controls.firstname.errors.required">{{ 'FORMULAIRE.ERREUR.CHAMP_OBLIGATOIRE' | translate }}</small>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="label">Nom</label>
-          <input type="text" nbInput fullWidth formControlName="lastname" [ngClass]="{
+          <label class="label">{{ 'AUTHENTIFICATION.ENREGISTREMENT.FORMULAIRE.NOM' | translate }}</label>
+          <input type="text" nbInput fullWidth formControlName="lastname" [(ngModel)]="user.lastname" [ngClass]="{
               'input-danger': registerForm.controls.lastname.invalid && registerForm.controls.lastname.touched, 
               'input-success': registerForm.controls.lastname.valid && registerForm.controls.lastname.touched
             }">
           <div class="form-input-error text-danger" *ngIf="registerForm.controls.lastname.invalid && registerForm.controls.lastname.touched">
-            <small *ngIf="registerForm.controls.lastname.errors.required">{{ 'PAGES.TOURNOI.AJOUTER.FORMULAIRE.CHAMP.NOM.ERREUR.CHAMP_OBLIGATOIRE.MESSAGE' | translate }}</small>
+            <small *ngIf="registerForm.controls.lastname.errors.required">{{ 'FORMULAIRE.ERREUR.CHAMP_OBLIGATOIRE' | translate }}</small>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="label">Adresse email</label>
-          <input type="email" nbInput fullWidth formControlName="email" [ngClass]="{
+          <label class="label">{{ 'AUTHENTIFICATION.ENREGISTREMENT.FORMULAIRE.ADRESSE_EMAIL' | translate }}</label>
+          <input type="email" nbInput fullWidth formControlName="email" [(ngModel)]="user.email" [ngClass]="{
               'input-danger': registerForm.controls.email.invalid && registerForm.controls.email.touched, 
               'input-success': registerForm.controls.email.valid && registerForm.controls.email.touched
             }">
           <div class="form-input-error text-danger" *ngIf="registerForm.controls.email.invalid && registerForm.controls.email.touched">
-            <small *ngIf="registerForm.controls.email.errors.required">{{ 'PAGES.TOURNOI.AJOUTER.FORMULAIRE.CHAMP.NOM.ERREUR.CHAMP_OBLIGATOIRE.MESSAGE' | translate }}</small>
-            <small *ngIf="registerForm.controls.email.errors.email">L'adresse email n'est pas valide</small>
+            <small *ngIf="registerForm.controls.email.errors.required">{{ 'FORMULAIRE.ERREUR.CHAMP_OBLIGATOIRE' | translate }}</small>
+            <small *ngIf="registerForm.controls.email.errors.email">{{ 'FORMULAIRE.ERREUR.EMAIL_INVALIDE' | translate }}</small>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="label">Mot de passe</label>
-          <input type="password" nbInput fullWidth formControlName="password" [ngClass]="{
+          <label class="label">{{ 'AUTHENTIFICATION.ENREGISTREMENT.FORMULAIRE.MOT_DE_PASSE' | translate }}</label>
+          <input type="password" nbInput fullWidth formControlName="password" [(ngModel)]="user.password" [ngClass]="{
               'input-danger': registerForm.controls.password.invalid && registerForm.controls.password.touched, 
               'input-success': registerForm.controls.password.valid && registerForm.controls.password.touched
           }">
           <div class="form-input-error text-danger" *ngIf="registerForm.controls.password.invalid && registerForm.controls.password.touched">
-            <small *ngIf="registerForm.controls.password.errors.required">{{ 'PAGES.TOURNOI.AJOUTER.FORMULAIRE.CHAMP.NOM.ERREUR.CHAMP_OBLIGATOIRE.MESSAGE' | translate }}</small>
+            <small *ngIf="registerForm.controls.password.errors.required">{{ 'FORMULAIRE.ERREUR.CHAMP_OBLIGATOIRE' | translate }}</small>
           </div>
           <div class="form-input-tips">
             <small [ngClass]="registerForm.controls.password.hasError('required') || registerForm.controls.password.hasError('minlength') ? 'text-danger' : 'text-success'">
@@ -58,7 +58,7 @@
               <span *ngIf="!registerForm.controls.password.hasError('required') && !registerForm.controls.password.hasError('minlength')">
                 <nb-icon icon="check-circle" pack="fas"></nb-icon>
               </span>
-              Contient au moins 8 caractères
+              {{ 'AUTHENTIFICATION.ENREGISTREMENT.FORMULAIRE.CONFIRMER_MOT_DE_PASSE.REGLE.MIN_8_CARACTERES' | translate }}
             </small>
             <small [ngClass]="registerForm.controls.password.hasError('required') || registerForm.controls.password.hasError('hasNumber') ? 'text-danger' : 'text-success'">
               <span *ngIf="registerForm.controls.password.hasError('required') || registerForm.controls.password.hasError('hasNumber')">
@@ -67,7 +67,7 @@
               <span *ngIf="!registerForm.controls.password.hasError('required') && !registerForm.controls.password.hasError('hasNumber')">
                 <nb-icon icon="check-circle" pack="fas"></nb-icon>
               </span>
-              Contient au moins un chiffre
+              {{ 'AUTHENTIFICATION.ENREGISTREMENT.FORMULAIRE.CONFIRMER_MOT_DE_PASSE.REGLE.AU_MOINS_1_CHIFFRE' | translate }}
             </small>
             <small [ngClass]="registerForm.controls.password.hasError('required') || registerForm.controls.password.hasError('hasCapitalCase') ? 'text-danger' : 'text-success'">
               <span *ngIf="registerForm.controls.password.hasError('required') || registerForm.controls.password.hasError('hasCapitalCase')">
@@ -76,7 +76,7 @@
               <span *ngIf="!registerForm.controls.password.hasError('required') && !registerForm.controls.password.hasError('hasCapitalCase')">
                 <nb-icon icon="check-circle" pack="fas"></nb-icon>
               </span>
-              Contient au moins un majuscule
+              {{ 'AUTHENTIFICATION.ENREGISTREMENT.FORMULAIRE.CONFIRMER_MOT_DE_PASSE.REGLE.AU_MOINS_1_MAJUSCULE' | translate }}
             </small>
             <small [ngClass]="registerForm.controls.password.hasError('required') || registerForm.controls.password.hasError('hasSmallCase') ? 'text-danger' : 'text-success'">
               <span *ngIf="registerForm.controls.password.hasError('required') || registerForm.controls.password.hasError('hasSmallCase')">
@@ -85,7 +85,7 @@
               <span *ngIf="!registerForm.controls.password.hasError('required') && !registerForm.controls.password.hasError('hasSmallCase')">
                 <nb-icon icon="check-circle" pack="fas"></nb-icon>
               </span>
-              Contient au moins un minuscule
+              {{ 'AUTHENTIFICATION.ENREGISTREMENT.FORMULAIRE.CONFIRMER_MOT_DE_PASSE.REGLE.AU_MOINS_1_MINUSCULE' | translate }}
             </small>
             <small [ngClass]="registerForm.controls.password.hasError('required') || registerForm.controls.password.hasError('hasSpecialCharacters') ? 'text-danger' : 'text-success'">
               <span *ngIf="registerForm.controls.password.hasError('required') || registerForm.controls.password.hasError('hasSpecialCharacters')">
@@ -94,25 +94,25 @@
               <span *ngIf="!registerForm.controls.password.hasError('required') && !registerForm.controls.password.hasError('hasSpecialCharacters')">
                 <nb-icon icon="check-circle" pack="fas"></nb-icon>
               </span>
-              Contient au moins un caractère spécial
+              {{ 'AUTHENTIFICATION.ENREGISTREMENT.FORMULAIRE.CONFIRMER_MOT_DE_PASSE.REGLE.AU_MOINS_1_CARACTERE_SPECIAL' | translate }}
             </small>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="label">Confirmer le mot de passe</label>
+          <label class="label">{{ 'AUTHENTIFICATION.ENREGISTREMENT.FORMULAIRE.CONFIRMER_MOT_DE_PASSE.LABEL' | translate }}</label>
           <input type="password" nbInput fullWidth formControlName="confirmPassword" [ngClass]="{
             'input-danger': registerForm.controls.confirmPassword.invalid && registerForm.controls.confirmPassword.touched, 
             'input-success': registerForm.controls.confirmPassword.valid && registerForm.controls.confirmPassword.touched
           }">
           <div class="form-input-error text-danger" *ngIf="registerForm.controls.confirmPassword.invalid && registerForm.controls.confirmPassword.touched">
-            <small *ngIf="registerForm.controls.confirmPassword.errors.required">{{ 'PAGES.TOURNOI.AJOUTER.FORMULAIRE.CHAMP.NOM.ERREUR.CHAMP_OBLIGATOIRE.MESSAGE' | translate }}</small>
-            <small *ngIf="registerForm.controls.confirmPassword.errors.noPasswordMatch">Les deux mots de passe ne sont pas identique</small>
+            <small *ngIf="registerForm.controls.confirmPassword.errors.required">{{ 'FORMULAIRE.ERREUR.CHAMP_OBLIGATOIRE' | translate }}</small>
+            <small *ngIf="registerForm.controls.confirmPassword.errors.noPasswordMatch">{{ 'FORMULAIRE.ERREUR.MOT_DE_PASSE_PAS_IDENTIQUE' | translate }}</small>
           </div>
         </div>
 
         <div class="form-group submit-group">
-          <button nbButton fullWidth type="submit" status="success" [disabled]="registerForm.pristine || registerForm.invalid">Bienvenue !</button>
+          <button nbButton fullWidth type="submit" status="success" [disabled]="registerForm.pristine || registerForm.invalid">{{ 'AUTHENTIFICATION.ENREGISTREMENT.FORMULAIRE.BOUTON.TEXTE' | translate }}</button>
         </div>
       </form>
 

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule, HttpClient } from '@angular/common/http'
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 // Modules de traduction
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -16,12 +16,16 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 // Modules de routing
 import { AppRoutingModule } from './app-routing.module';
 
+// Intercepteurs HTTP
+import { JwtInterceptor } from './_helpers/interceptors/jwt.interceptor';
+import { ErrorInterceptor } from './_helpers/interceptors/error.interceptor';
+
 // Module Ng2SmartTable
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 // Components FinalRound
-
 import { FiroSidebarComponent } from './_components/firo-sidebar/firo-sidebar.component';
+
 // Pages
 import { AppComponent } from './app.component';
 import { HomeComponent } from './_pages/home/home.component';
@@ -84,7 +88,10 @@ export function createTranslateLoader(http: HttpClient) {
       }
     })
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

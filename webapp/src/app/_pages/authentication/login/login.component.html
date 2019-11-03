@@ -2,36 +2,36 @@
   <nb-card-body>
     <div class="form-container">
       <div class="form-header">
-        <h1>Connectez-vous</h1>
-        <p>Pas encore membre ? <button nbButton outline size="tiny" status="primary" [routerLink]="['/register']">Rejoignez-nous</button></p>
+        <h1>{{ 'AUTHENTIFICATION.CONNEXION.TITRE' | translate }}</h1>
+        <p>{{ 'AUTHENTIFICATION.CONNEXION.SOUS_TITRE.TEXTE' | translate }} <button nbButton outline size="tiny" status="primary" [routerLink]="['/register']">{{ 'AUTHENTIFICATION.CONNEXION.SOUS_TITRE.BOUTON' | translate }}</button></p>
       </div>
       <form [formGroup]="loginForm" (ngSubmit)="login()">
 
         <div class="form-group">
-          <label class="label">Adresse email</label>
-          <input type="email" nbInput fullWidth formControlName="email" [ngClass]="{
+          <label class="label">{{ 'AUTHENTIFICATION.CONNEXION.FORMULAIRE.ADRESSE_EMAIL' | translate }}</label>
+          <input type="email" nbInput fullWidth formControlName="email" [(ngModel)]="user.email" [ngClass]="{
             'input-danger': loginForm.controls.email.invalid && loginForm.controls.email.touched, 
             'input-success': loginForm.controls.email.valid && loginForm.controls.email.touched
           }">
           <div class="form-input-error text-danger" *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched">
-            <small *ngIf="loginForm.controls.email.errors.required">{{ 'PAGES.TOURNOI.AJOUTER.FORMULAIRE.CHAMP.NOM.ERREUR.CHAMP_OBLIGATOIRE.MESSAGE' | translate }}</small>
-            <small *ngIf="loginForm.controls.email.errors.email">L'adresse email n'est pas valide</small>
+            <small *ngIf="loginForm.controls.email.errors.required">{{ 'FORMULAIRE.ERREUR.CHAMP_OBLIGATOIRE' | translate }}</small>
+            <small *ngIf="loginForm.controls.email.errors.email">{{ 'FORMULAIRE.ERREUR.EMAIL_INVALIDE' | translate }}</small>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="label">Mot de passe</label>
-          <input type="password" nbInput fullWidth formControlName="password" [ngClass]="{
+          <label class="label">{{ 'AUTHENTIFICATION.CONNEXION.FORMULAIRE.MOT_DE_PASSE' | translate }}</label>
+          <input type="password" nbInput fullWidth formControlName="password" [(ngModel)]="user.password" [ngClass]="{
             'input-danger': loginForm.controls.password.invalid && loginForm.controls.password.touched, 
             'input-success': loginForm.controls.password.valid && loginForm.controls.password.touched
           }">
           <div class="form-input-error text-danger" *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">
-            <small *ngIf="loginForm.controls.password.errors.required">{{ 'PAGES.TOURNOI.AJOUTER.FORMULAIRE.CHAMP.NOM.ERREUR.CHAMP_OBLIGATOIRE.MESSAGE' | translate }}</small>
+            <small *ngIf="loginForm.controls.password.errors.required">{{ 'FORMULAIRE.ERREUR.CHAMP_OBLIGATOIRE' | translate }}</small>
           </div>
         </div>
 
         <div class="form-group submit-group">
-          <button nbButton fullWidth type="submit" status="success" [disabled]="loginForm.pristine || loginForm.invalid">C'est parti !</button>
+          <button nbButton fullWidth type="submit" status="success" [disabled]="loginForm.pristine || loginForm.invalid">{{ 'AUTHENTIFICATION.CONNEXION.FORMULAIRE.BOUTON.TEXTE' | translate }}</button>
         </div>
       </form>
 
