@@ -1,4 +1,81 @@
 {
+  "AUTHENTIFICATION": {
+    "CONNEXION": {
+      "FORMULAIRE": {
+        "ADRESSE_EMAIL": "Email address",
+        "BOUTON": {
+          "TEXTE": "Let's go !"
+        },
+        "MOT_DE_PASSE": "Password"
+      },
+      "SOUS_TITRE": {
+        "BOUTON": "Join us now",
+        "TEXTE": "Not yet a member?"
+      },
+      "TITRE": "Login to your account",
+      "TOAST": {
+        "ERREUR": {
+          "AUTRE": {
+            "MESSAGE": "An error has occurred, please try again later",
+            "TITRE": "The connection failed"
+          },
+          "EMAIL": {
+            "MESSAGE": "Email is not registered",
+            "TITRE": "The connection failed"
+          },
+          "MOT_DE_PASSE": {
+            "MESSAGE": "The password is wrong",
+            "TITRE": "The connection failed"
+          }
+        }
+      }
+    },
+    "ENREGISTREMENT": {
+      "FORMULAIRE": {
+        "ADRESSE_EMAIL": "Email address",
+        "BOUTON": {
+          "TEXTE": "Welcome!"
+        },
+        "CONFIRMER_MOT_DE_PASSE": {
+          "LABEL": "Confirm password",
+          "REGLE": {
+            "AU_MOINS_1_CARACTERE_SPECIAL": "Contains at least one special character",
+            "AU_MOINS_1_CHIFFRE": "Contains at least one number",
+            "AU_MOINS_1_MAJUSCULE": "Contains at least one uppercase letter",
+            "AU_MOINS_1_MINUSCULE": "Contains at least one lowercase letter",
+            "MIN_8_CARACTERES": "Contains at least 8 characters"
+          }
+        },
+        "MOT_DE_PASSE": "Password",
+        "NOM": "Last name",
+        "PRENOM": "First name"
+      },
+      "SOUS_TITRE": {
+        "BOUTON": "Login",
+        "TEXTE": "Already a member? "
+      },
+      "TITRE": "Join us now",
+      "TOAST": {
+        "ERREUR": {
+          "AUTRE": {
+            "MESSAGE": "An error has occurred, please try again later",
+            "TITRE": "The account creation failed"
+          },
+          "EMAIL_EXISTE_DEJA": {
+            "MESSAGE": "The email address already exists in the database",
+            "TITRE": "The account creation failed"
+          }
+        }
+      }
+    }
+  },
+  "FORMULAIRE": {
+    "ERREUR": {
+      "CHAMP_OBLIGATOIRE": "The field is required",
+      "EMAIL_INVALIDE": "The email address is not valid",
+      "MOT_DE_PASSE_PAS_IDENTIQUE": "Passwords are not identical"
+    }
+  },
   "MENU": {
     "ACCUEIL": "Home",
     "VOS_TOURNOIS": "Your tournaments"
