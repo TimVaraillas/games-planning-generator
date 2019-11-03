@@ -11,6 +11,8 @@ var mongoose = require("mongoose");
 var cors = require("cors");
 var passport = require("passport");
 
+var jwtHelpers = require("./helpers/jwt.helpers");
+
 var userRouter = require("./routes/user.router");
 var tournamentRouter = require("./routes/tournament.router");
 
@@ -32,6 +34,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // MongoDB connexion
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI, {
+    useCreateIndex: true,
     useUnifiedTopology: true,
     useNewUrlParser: true
   })
@@ -46,7 +49,7 @@ app.use(passport.initialize());
 
 // Routes
 app.use("/user", userRouter);
-app.use("/tournament", tournamentRouter);
+app.use("/tournament", jwtHelpers.verifyJwtToken, tournamentRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

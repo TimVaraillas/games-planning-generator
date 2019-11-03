@@ -4,7 +4,7 @@ var localStrategy = require("passport-local").Strategy;
 var User = require("../models/user.model");
 
 passport.use(
-  new localStrategy({ usernameField: 'email' }, 
+  new localStrategy({ usernameField: "email" }, 
     function (username, password, done) {
       User.findOne({ email: username },
         function(err, user) {
@@ -13,11 +13,11 @@ passport.use(
           }
           // unknown user
           if (!user) {
-            return done(null, false, { message: 'Email is not registered' });
+            return done(null, false, { message: { translationKey: "AUTHENTIFICATION.CONNEXION.TOAST.ERREUR.EMAIL"} });
           }
           // wrong password
           if (!user.verifyPassword(password)) {
-            return done(null, false, { message: 'Wrong password.' });
+            return done(null, false, { message: { translationKey: "AUTHENTIFICATION.CONNEXION.TOAST.ERREUR.MOT_DE_PASSE" } });
           }
           // authentication succeeded
           else {

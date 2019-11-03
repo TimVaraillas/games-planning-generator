@@ -2,13 +2,13 @@
   "development": {
       "PORT": 3000,
       "MONGODB_URI": "mongodb://localhost:27017/finalRound",
-      "JWT_SECRET": "SECRET#123",
-      "JWT_EXP": "2m"
+      "JWT_SECRET": "WC_mt?P+HP92hbn85CS2?xN9UbeYwx%LDw_SY_P?s4CJu!BxT2",
+      "JWT_EXP": "86400s"
   },
   "production": {
       "PORT": 80,
       "MONGODB_URI": "mongodb://xxxxx/DB_Name",
-      "JWT_SECRET": "SECRET#123",
-      "JWT_EXP": "2m"
+      "JWT_SECRET": "WC_mt?P+HP92hbn85CS2?xN9UbeYwx%LDw_SY_P?s4CJu!BxT2",
+      "JWT_EXP": "86400s"
   }
 }

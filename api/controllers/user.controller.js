@@ -15,7 +15,11 @@ module.exports.register = function (req, res, next) {
     .then(function (document) {
       res.status(200).json(document);
     }).catch(function (err) {
-      res.status(400).json(err);
+      if (err.code && err.code == 11000) {
+        res.status(400).json({ message: { translationKey: "AUTHENTIFICATION.ENREGISTREMENT.TOAST.ERREUR.EMAIL_EXISTE_DEJA" } })
+      } else {
+        res.status(400).json(err);
+      }
     });
 }
 
@@ -24,7 +28,7 @@ module.exports.authenticate = function(req, res, next) {
     if (err) { // error from passport middleware
       return res.status(400).json(err);
     } else if (user) { // registered user
-      return res.status(200).json({ token: user.generateJwt() });
+      return res.status(200).json({ user: user, token: user.generateJwt(), expiresIn: process.env.JWT_EXP });
     } else { // unknown user or wrong password
       return res.status(404).json(info);
     }
