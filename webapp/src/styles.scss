@@ -1,0 +1,27 @@
+@import './styles/themes.scss';
+
+@import '~@nebular/theme/styles/globals';
+@import '~@nebular/bootstrap/styles/globals';
+
+@include nb-install() {
+  @include nb-theme-global();
+  @include nb-bootstrap-global();
+};
+
+@import './styles/_form';
+@import './styles/_side-bar';
+@import './styles/_single-elimination-grid';
+@import './styles/_smart-tables';
+
+nb-tab {
+  overflow: hidden !important;
+}
+
+.pull-right {
+  float: right;
+}
+
+.user-picture {
+  border: none !important;
+}
+

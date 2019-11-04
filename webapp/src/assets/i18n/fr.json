@@ -1,0 +1,156 @@
+{
+  "AUTHENTIFICATION": {
+    "CONNEXION": {
+      "FORMULAIRE": {
+        "ADRESSE_EMAIL": "Adresse email",
+        "BOUTON": {
+          "TEXTE": "C'est parti !"
+        },
+        "MOT_DE_PASSE": "Mot de passe"
+      },
+      "SOUS_TITRE": {
+        "BOUTON": "Rejoignez-nous",
+        "TEXTE": "Pas encore membre ? "
+      },
+      "TITRE": "Connectez-vous",
+      "TOAST": {
+        "ERREUR": {
+          "AUTRE": {
+            "MESSAGE": "Une erreur est survenue, merci de réessayer ultérieurement",
+            "TITRE": "La connexion a échoué"
+          },
+          "EMAIL": {
+            "MESSAGE": "L'adresse email n'est pas enregistrée",
+            "TITRE": "La connexion a échoué"
+          },
+          "MOT_DE_PASSE": {
+            "MESSAGE": "Le mot de passe est incorrect",
+            "TITRE": "La connexion a échoué"
+          }
+        }
+      }
+    },
+    "ENREGISTREMENT": {
+      "FORMULAIRE": {
+        "ADRESSE_EMAIL": "Adresse email",
+        "BOUTON": {
+          "TEXTE": "Bienvenue !"
+        },
+        "CONFIRMER_MOT_DE_PASSE": {
+          "LABEL": "Confirmer le mot de passe",
+          "REGLE": {
+            "AU_MOINS_1_CARACTERE_SPECIAL": "Contient au moins un caractère spécial",
+            "AU_MOINS_1_CHIFFRE": "Contient au moins un chiffre",
+            "AU_MOINS_1_MAJUSCULE": "Contient au moins une majuscule",
+            "AU_MOINS_1_MINUSCULE": "Contient au moins un minuscule",
+            "MIN_8_CARACTERES": "Contient au moins 8 caractères"
+          }
+        },
+        "MOT_DE_PASSE": "Mot de passe",
+        "NOM": "Nom",
+        "PRENOM": "Prénom"
+      },
+      "SOUS_TITRE": {
+        "BOUTON": "Connectez-vous",
+        "TEXTE": "Déjà membre ? "
+      },
+      "TITRE": "Rejoignez-nous",
+      "TOAST": {
+        "ERREUR": {
+          "AUTRE": {
+            "MESSAGE": "Une erreur est survenue, merci de réessayer ultérieurement",
+            "TITRE": "La création du compte a échoué"
+          },
+          "EMAIL_EXISTE_DEJA": {
+            "MESSAGE": "L'adresse email existe déjà dans la base de donnée",
+            "TITRE": "La création du compte a échoué"
+          }
+        }
+      }
+    }
+  },
+  "FORMULAIRE": {
+    "ERREUR": {
+      "CHAMP_OBLIGATOIRE": "Le champ est obligatoire",
+      "EMAIL_INVALIDE": "L'adresse email n'est pas valide",
+      "MOT_DE_PASSE_PAS_IDENTIQUE": "Les mots de passe ne sont pas identiques"
+    }
+  },
+  "MENU": {
+    "ACCUEIL": "Accueil",
+    "PRINCIPAL": {
+      "ACCUEIL": "Accueil",
+      "TOURNOIS": "Tournois"
+    },
+    "UTILISATEUR": {
+      "DECONNEXION": "Déconnexion",
+      "PROFIL": "Mon profil"
+    },
+    "VOS_TOURNOIS": "Vos tournois"
+  },
+  "PAGES": {
+    "404": {
+      "ERREUR_404": "Erreur 404",
+      "MESSAGE_BOUTON": "Retour à l'accueil",
+      "MESSAGE_ERREUR": "La page que vous essayez d'atteindre n'existe pas.",
+      "OUPS": "Oups !"
+    },
+    "TOURNOI": {
+      "AJOUTER": {
+        "FORMULAIRE": {
+          "BOUTON": {
+            "CREER": "Créer"
+          },
+          "CHAMP": {
+            "NOM": {
+              "ERREUR": {
+                "CHAMP_OBLIGATOIRE": {
+                  "MESSAGE": "Le champ est obligatoire"
+                }
+              },
+              "LABEL": "Nom du tournoi"
+            }
+          }
+        },
+        "TITRE": "Créer un nouveau tournoi",
+        "TOAST": {
+          "ERREUR": {
+            "MESSAGE": "Une erreur s'est produite, le tournoi n'a pas pu être créé",
+            "TITRE": "Erreur"
+          },
+          "SUCCES": {
+            "MESSAGE": "Le tournoi a été créé avec succès",
+            "TITRE": "Tournoi créé"
+          }
+        }
+      },
+      "LISTE": {
+        "TABLEAU": {
+          "ACTION": {
+            "SUPPRIMER": {
+              "LABEL": "Supprimer"
+            }
+          },
+          "CHAMP": {
+            "NOM": {
+              "LABEL": "Nom du tournoi"
+            }
+          }
+        },
+        "TITRE": "Liste de vos tournois",
+        "TOAST": {
+          "SUPPRIMER": {
+            "ERREUR": {
+              "MESSAGE": "Une erreur s'est produite, le tournoi n'a pas pu être supprimé",
+              "TITRE": "Erreur"
+            },
+            "SUCCES": {
+              "MESSAGE": "Le tournoi a été supprimé avec succès",
+              "TITRE": "Tournoi supprimé"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "AUTHENTIFICATION": {
+    "CONNEXION": {
+      "FORMULAIRE": {
+        "ADRESSE_EMAIL": "Dirección de correo electrónico",
+        "BOUTON": {
+          "TEXTE": "¡Hagámoslo!"
+        },
+        "MOT_DE_PASSE": "Contraseña"
+      },
+      "SOUS_TITRE": {
+        "BOUTON": "Únete a nosotros ahora",
+        "TEXTE": "¿Todavía no eres miembro? "
+      },
+      "TITRE": "Inicie sesión en su cuenta",
+      "TOAST": {
+        "ERREUR": {
+          "AUTRE": {
+            "MESSAGE": "Se ha producido un error, inténtelo de nuevo más tarde",
+            "TITRE": "La conexión falló"
+          },
+          "EMAIL": {
+            "MESSAGE": "La dirección de correo electrónico no está registrada",
+            "TITRE": "La conexión falló"
+          },
+          "MOT_DE_PASSE": {
+            "MESSAGE": "La contraseña es incorrecta",
+            "TITRE": "La conexión falló"
+          }
+        }
+      }
+    },
+    "ENREGISTREMENT": {
+      "FORMULAIRE": {
+        "ADRESSE_EMAIL": "Dirección de correo electrónico",
+        "BOUTON": {
+          "TEXTE": "¡Bienvenidos!"
+        },
+        "CONFIRMER_MOT_DE_PASSE": {
+          "LABEL": "Confirmar contraseña",
+          "REGLE": {
+            "AU_MOINS_1_CARACTERE_SPECIAL": "Contiene al menos un carácter especial",
+            "AU_MOINS_1_CHIFFRE": "Contiene al menos un número",
+            "AU_MOINS_1_MAJUSCULE": "Contiene al menos una letra mayúscula",
+            "AU_MOINS_1_MINUSCULE": "Contiene al menos una letra minúscula",
+            "MIN_8_CARACTERES": "Contiene al menos 8 caracteres"
+          }
+        },
+        "MOT_DE_PASSE": "Contraseña",
+        "NOM": "Apellido",
+        "PRENOM": "Nombre de pila"
+      },
+      "SOUS_TITRE": {
+        "BOUTON": "Inicie sesión",
+        "TEXTE": "¿Ya eres miembro? "
+      },
+      "TITRE": "Únete a nosotros ahora",
+      "TOAST": {
+        "ERREUR": {
+          "AUTRE": {
+            "MESSAGE": "Se ha producido un error, inténtelo de nuevo más tarde",
+            "TITRE": "La creación de la cuenta falló"
+          },
+          "EMAIL_EXISTE_DEJA": {
+            "MESSAGE": "La dirección de correo electrónico ya existe en la base de datos",
+            "TITRE": "La creación de la cuenta falló"
+          }
+        }
+      }
+    }
+  },
+  "FORMULAIRE": {
+    "ERREUR": {
+      "CHAMP_OBLIGATOIRE": "El campo es obligatorio",
+      "EMAIL_INVALIDE": "La dirección de correo electrónico no es válida",
+      "MOT_DE_PASSE_PAS_IDENTIQUE": "Las contraseñas no son idénticas"
+    }
+  },
+  "MENU": {
+    "ACCUEIL": "Inicio",
+    "PRINCIPAL": {
+      "ACCUEIL": "Inicio",
+      "TOURNOIS": "Torneos"
+    },
+    "UTILISATEUR": {
+      "DECONNEXION": "Cerrar sesión",
+      "PROFIL": "Mi perfil"
+    },
+    "VOS_TOURNOIS": "Sus torneos"
+  },
+  "PAGES": {
+    "404": {
+      "ERREUR_404": "Error 404",
+      "MESSAGE_BOUTON": "Volver a la página de inicio",
+      "MESSAGE_ERREUR": "La página a la que intenta acceder no existe.",
+      "OUPS": "¡Uy!"
+    },
+    "TOURNOI": {
+      "AJOUTER": {
+        "FORMULAIRE": {
+          "BOUTON": {
+            "CREER": "Crear"
+          },
+          "CHAMP": {
+            "NOM": {
+              "ERREUR": {
+                "CHAMP_OBLIGATOIRE": {
+                  "MESSAGE": "El campo es obligatorio"
+                }
+              },
+              "LABEL": "Nombre del torneo"
+            }
+          }
+        },
+        "TITRE": "Crear un nuevo torneo",
+        "TOAST": {
+          "ERREUR": {
+            "MESSAGE": "Se ha producido un error, el torneo no se ha podido crear",
+            "TITRE": "Error"
+          },
+          "SUCCES": {
+            "MESSAGE": "El torneo fue creado con éxito",
+            "TITRE": "Torneo creado"
+          }
+        }
+      },
+      "LISTE": {
+        "TABLEAU": {
+          "ACTION": {
+            "SUPPRIMER": {
+              "LABEL": "Borrar"
+            }
+          },
+          "CHAMP": {
+            "NOM": {
+              "LABEL": "Nombre del torneo"
+            }
+          }
+        },
+        "TITRE": "Lista de sus torneos",
+        "TOAST": {
+          "SUPPRIMER": {
+            "ERREUR": {
+              "MESSAGE": "Se ha producido un error, el torneo no se ha podido eliminar",
+              "TITRE": "Error"
+            },
+            "SUCCES": {
+              "MESSAGE": "El torneo ha sido cancelado con éxito",
+              "TITRE": "Torneo eliminado"
+            }
+          }
+        }
+      }
+    }
+  }
+}

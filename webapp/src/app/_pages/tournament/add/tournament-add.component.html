@@ -1,0 +1,26 @@
+<nb-card>
+    
+    <nb-card-header>{{ 'PAGES.TOURNOI.AJOUTER.TITRE' | translate }}</nb-card-header>
+    
+    <nb-card-body>
+        <form [formGroup]="addTournamentForm" (ngSubmit)="addTournament()">
+
+            <div class="form-group">
+                <label class="label">{{ 'PAGES.TOURNOI.AJOUTER.FORMULAIRE.CHAMP.NOM.LABEL' | translate }}</label>
+                <input #tournamentName type="text" nbInput fullWidth formControlName="tournamentName" [(ngModel)]="tournament.name" [ngClass]="{
+                    'input-danger': addTournamentForm.controls['tournamentName'].invalid && (addTournamentForm.controls['tournamentName'].dirty || addTournamentForm.controls['tournamentName'].touched), 
+                    'input-success': addTournamentForm.controls['tournamentName'].valid && (addTournamentForm.controls['tournamentName'].dirty || addTournamentForm.controls['tournamentName'].touched)
+                }">
+                <div class="form-input-error text-danger" *ngIf="addTournamentForm.controls['tournamentName'].invalid && (addTournamentForm.controls['tournamentName'].dirty || addTournamentForm.controls['tournamentName'].touched)">
+                    <small *ngIf="addTournamentForm.controls['tournamentName'].errors.required">{{ 'PAGES.TOURNOI.AJOUTER.FORMULAIRE.CHAMP.NOM.ERREUR.CHAMP_OBLIGATOIRE.MESSAGE' | translate }}</small>
+                </div>
+            </div>
+
+            <div class="form-group submit-group">
+                <button nbButton type="submit" status="primary" [disabled]="addTournamentForm.pristine || addTournamentForm.invalid">{{ 'PAGES.TOURNOI.AJOUTER.FORMULAIRE.BOUTON.CREER' | translate }}</button>
+            </div>
+
+        </form>
+    </nb-card-body>
+
+</nb-card>
