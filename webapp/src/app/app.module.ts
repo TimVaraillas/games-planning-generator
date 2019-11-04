@@ -10,7 +10,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 // Modules Nebular
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbActionsModule, NbMenuModule, NbIconModule, NbContextMenuModule, NbCardModule, NbButtonModule, NbInputModule, NbToastrModule, NbTooltipModule, NbTabsetModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbActionsModule, NbMenuModule, NbIconModule, NbContextMenuModule, NbCardModule, NbButtonModule, NbInputModule, NbToastrModule, NbTooltipModule, NbTabsetModule, NbUserModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 // Modules de routing
@@ -78,6 +78,7 @@ export function createTranslateLoader(http: HttpClient) {
     NbThemeModule.forRoot({ name: 'dark' }),
     NbToastrModule.forRoot(),
     NbTooltipModule,
+    NbUserModule,
     Ng2SmartTableModule,
     ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
     TranslateModule.forRoot({

@@ -9,19 +9,20 @@
         </a>
         <a class="header-logo" href="#">FinalRound</a>
       </div>
-
-      <div class="header-right">
-        <div [nbContextMenu]="languages" nbContextMenuTag="lang-menu">
-          <nb-icon class="flag" icon="{{ selectedLanguage.icon.icon }}" pack="flag"></nb-icon>
-        </div>
-      </div>
+      
+      <nb-actions size="small" class="header-actions">
+        <nb-action class="header-action control-item" [nbContextMenu]="languages" nbContextMenuTag="lang-menu" icon="globe-outline"></nb-action>
+        <nb-action class="header-action control-item" [nbContextMenu]="userMenuItems" nbContextMenuTag="user-actions">
+          <nb-user size="medium" name="{{loggedUser.firstname}} {{loggedUser.lastname}}" picture="/assets/images/user/user.png"></nb-user>
+        </nb-action>
+      </nb-actions>
 
     </div>
   
   </nb-layout-header>
 
   <nb-sidebar tag="left">
-    <nb-menu [items]="menuItems">
+    <nb-menu [items]="mainMenuItems">
     </nb-menu>
   </nb-sidebar>
 

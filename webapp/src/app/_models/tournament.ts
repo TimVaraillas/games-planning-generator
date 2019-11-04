@@ -3,8 +3,8 @@ import * as _ from 'lodash';
 
 export class Tournament {
 
-    _id: String;
-    name: String;
+    _id: string;
+    name: string;
     competitors: Competitor[];
 
     constructor() {}

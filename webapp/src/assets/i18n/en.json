@@ -78,6 +78,14 @@
   },
   "MENU": {
     "ACCUEIL": "Home",
+    "PRINCIPAL": {
+      "ACCUEIL": "Home",
+      "TOURNOIS": "Tournaments"
+    },
+    "UTILISATEUR": {
+      "DECONNEXION": "Log out",
+      "PROFIL": "My profile"
+    },
     "VOS_TOURNOIS": "Your tournaments"
   },
   "PAGES": {

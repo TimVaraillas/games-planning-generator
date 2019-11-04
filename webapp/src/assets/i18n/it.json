@@ -78,6 +78,14 @@
   },
   "MENU": {
     "ACCUEIL": "Home",
+    "PRINCIPAL": {
+      "ACCUEIL": "Home",
+      "TOURNOIS": "Tornei"
+    },
+    "UTILISATEUR": {
+      "DECONNEXION": "Esci",
+      "PROFIL": "Il mio profilo"
+    },
     "VOS_TOURNOIS": "I vostri tornei"
   },
   "PAGES": {

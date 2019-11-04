@@ -78,6 +78,14 @@
   },
   "MENU": {
     "ACCUEIL": "Startseite",
+    "PRINCIPAL": {
+      "ACCUEIL": "Startseite",
+      "TOURNOIS": "Turniere"
+    },
+    "UTILISATEUR": {
+      "DECONNEXION": "Abmelden",
+      "PROFIL": "Mein Profil"
+    },
     "VOS_TOURNOIS": "Ihre Turniere"
   },
   "PAGES": {
