@@ -22,9 +22,6 @@ export const SETTINGS = {
       deleteButtonContent: '<i class="fas fa-trash"></i>',
       confirmDelete: true
     },
-    filter: {
-      inputClass: 'form-control'
-    },
     hideSubHeader: false,
     pager: {
       perPage: 15
