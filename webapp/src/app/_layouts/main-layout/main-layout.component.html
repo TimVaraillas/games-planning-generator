@@ -11,8 +11,8 @@
       </div>
       
       <nb-actions size="small" class="header-actions">
-        <nb-action class="header-action control-item" [nbContextMenu]="languages" nbContextMenuTag="lang-menu" icon="globe-outline"></nb-action>
-        <nb-action class="header-action control-item" [nbContextMenu]="userMenuItems" nbContextMenuTag="user-actions">
+        <nb-action *ngIf="languages.length > 0" class="header-action control-item" [nbContextMenu]="languages" nbContextMenuTag="lang-menu" icon="globe-outline"></nb-action>
+        <nb-action *ngIf="userMenuItems.length > 0" class="header-action control-item" [nbContextMenu]="userMenuItems" nbContextMenuTag="user-actions">
           <nb-user size="medium" name="{{loggedUser.firstname}} {{loggedUser.lastname}}" picture="/assets/images/user/user.png"></nb-user>
         </nb-action>
       </nb-actions>
@@ -22,7 +22,7 @@
   </nb-layout-header>
 
   <nb-sidebar tag="left">
-    <nb-menu [items]="mainMenuItems">
+    <nb-menu *ngIf="mainMenuItems.length > 0" [items]="mainMenuItems">
     </nb-menu>
   </nb-sidebar>
 

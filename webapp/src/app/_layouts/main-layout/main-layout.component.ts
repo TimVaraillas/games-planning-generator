@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { filter } from 'rxjs/operators';
 import { TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
-import { NbSidebarService, NbIconLibraries, NbMenuService } from '@nebular/theme';
+import { NbSidebarService, NbIconLibraries, NbMenuService, NbMenuItem } from '@nebular/theme';
 import { AuthenticationService } from 'src/app/_services/authentication/authentication.service';
 import { User } from 'src/app/_models/user';
 
@@ -18,14 +18,7 @@ export class MainLayoutComponent implements OnInit {
   mainMenuItems: any[] = [];
   userMenuItems: any[] = [];
 
-  selectedLanguage = { code: 'fr', title: 'Français', icon: { icon: 'fr', pack: 'flag' } };
-  languages = [
-    { code: 'de', title: 'Deutsch', icon: { icon: 'de', pack: 'flag' } },
-    { code: 'en', title: 'English', icon: { icon: 'en', pack: 'flag' } },
-    { code: 'es', title: 'Español', icon: { icon: 'es', pack: 'flag' } },
-    { code: 'fr', title: 'Français', icon: { icon: 'fr', pack: 'flag' } },
-    { code: 'it', title: 'Italiano', icon: { icon: 'it', pack: 'flag' } }
-  ];
+  languages: any[];
 
   constructor(
     private authenticationService: AuthenticationService,
@@ -33,10 +26,23 @@ export class MainLayoutComponent implements OnInit {
     private sidebarService: NbSidebarService,
     private nbMenuService: NbMenuService
   ) {
+    this.loggedUser = this.authenticationService.loggedUserValue;
     this.getTranslations();
+    this.translate.onLangChange.subscribe((event: TranslationChangeEvent) => {
+      this.getTranslations();
+    });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+    this.languages = [
+      { code: 'de', title: 'Deutsch', icon: { icon: 'de', pack: 'flag' } },
+      { code: 'en', title: 'English', icon: { icon: 'en', pack: 'flag' } },
+      { code: 'es', title: 'Español', icon: { icon: 'es', pack: 'flag' } },
+      { code: 'fr', title: 'Français', icon: { icon: 'fr', pack: 'flag' } },
+      { code: 'it', title: 'Italiano', icon: { icon: 'it', pack: 'flag' } }
+    ];
+  }
 
   getTranslations() {
     this.translate.get([
@@ -46,18 +52,15 @@ export class MainLayoutComponent implements OnInit {
       'MENU.UTILISATEUR.DECONNEXION'
     ]).subscribe((res: string[]) => {
       this.translations = res;
-      this.init();
+      this.initMenus();
     });
   }
 
   /**
    * Initialisation des menus
    */
-  init() {
+  initMenus() {
     this.setMenuItems(); // Définir les items du menu
-    this.translate.onLangChange.subscribe((event: TranslationChangeEvent) => {
-      this.setMenuItems(); // Redefinir les items du menu traduits en cas de changement de langue
-    });
 
     this.nbMenuService.onItemClick().pipe( // Ajouter un listener sur le menu de sélection de la langue
       filter(({ tag }) => tag === 'lang-menu')
@@ -76,7 +79,6 @@ export class MainLayoutComponent implements OnInit {
         }
       }
     });
-    this.loggedUser = this.authenticationService.loggedUserValue;
   }
 
   /**
@@ -98,7 +100,6 @@ export class MainLayoutComponent implements OnInit {
    * @param lang - langue
    */
   setLanguage(lang: any): void {
-    this.selectedLanguage = lang;
     this.translate.use(lang.code);
   }
 
