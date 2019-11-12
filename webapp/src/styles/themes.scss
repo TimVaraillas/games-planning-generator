@@ -1,6 +1,6 @@
 @import '~@nebular/theme/styles/theming';
 @import '~@nebular/theme/styles/themes/dark';
-
+@import './colors';
 $nb-themes: nb-register-theme((
 
   // add your variables here like:
@@ -324,9 +324,53 @@ $nb-themes: nb-register-theme((
   // scrollbar-width: 0.3125rem,
 
   // shadow: 0 0.5rem 1rem 0 rgba(44, 51, 73, 0.1),
-
+  
   // divider-color: border-basic-color-3,
   // divider-style: solid,
   // divider-width: 1px,
+  
+  color-primary-100: $robin-300,
+  color-primary-200: $robin-400,
+  color-primary-300: $robin-500,
+  color-primary-400: $robin-600,
+  color-primary-500: $robin-700,
+  color-primary-600: $robin-800,
+  color-primary-700: $robin-900,
+  color-primary-800: $robin-1000,
+  color-primary-900: $robin-1100,
+  
+  color-primary-transparent-100: $robin-transparent-100,
+  color-primary-transparent-200: $robin-transparent-200,
+  color-primary-transparent-300: $robin-transparent-300,
+  color-primary-transparent-400: $robin-transparent-400,
+  color-primary-transparent-500: $robin-transparent-500,
+  color-primary-transparent-600: $robin-transparent-600,
+  
+  color-basic-100: $charleston-100,
+  color-basic-200: $charleston-200,
+  color-basic-300: $charleston-300,
+  color-basic-400: $charleston-400,
+  color-basic-500: $charleston-500,
+  color-basic-600: $charleston-600,
+  color-basic-700: $charleston-700,
+  color-basic-800: $charleston-800,
+  color-basic-900: $charleston-900,
+  color-basic-1000: $charleston-1000,
+  color-basic-1100: $charleston-1100,
+  
+  color-basic-transparent-100: $charleston-transparent-100,
+  color-basic-transparent-200: $charleston-transparent-200,
+  color-basic-transparent-300: $charleston-transparent-300,
+  color-basic-transparent-400: $charleston-transparent-400,
+  color-basic-transparent-500: $charleston-transparent-500,
+  color-basic-transparent-600: $charleston-transparent-600,
+
+  color-basic-focus: $charleston-600,
+  color-basic-hover: $charleston-400,
+  color-basic-default: $charleston-500,
+  color-basic-active: $charleston-600,
+  color-basic-disabled: $charleston-400,
+
+  shadow: 0 0.5rem 1rem 0 $charleston-transparent-500,
 
 ), dark, dark);
