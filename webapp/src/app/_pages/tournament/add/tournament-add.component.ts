@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NbToastrService, NbGlobalLogicalPosition } from '@nebular/theme';
 import { TranslateService } from '@ngx-translate/core';
 import { Tournament } from 'src/app/_models/tournament';
@@ -11,7 +11,6 @@ import { TournamentService } from 'src/app/_services/tournament/tournament.servi
   styleUrls: ['./tournament-add.component.scss']
 })
 export class TournamentAddComponent implements OnInit {
-
   @Output()
   added: EventEmitter<Tournament> = new EventEmitter<Tournament>();
 
@@ -24,7 +23,7 @@ export class TournamentAddComponent implements OnInit {
     private fb: FormBuilder,
     private toastr: NbToastrService,
     private translate: TranslateService,
-    private tournamentService: TournamentService,
+    private tournamentService: TournamentService
   ) {
     this.createForm();
     this.tournament = new Tournament();
@@ -35,25 +34,27 @@ export class TournamentAddComponent implements OnInit {
   }
 
   getTranslations() {
-    this.translate.get([
-      'PAGES.TOURNOI.AJOUTER.TOAST.SUCCES.TITRE',
-      'PAGES.TOURNOI.AJOUTER.TOAST.SUCCES.MESSAGE',
-      'PAGES.TOURNOI.AJOUTER.TOAST.ERREUR.TITRE',
-      'PAGES.TOURNOI.AJOUTER.TOAST.ERREUR.MESSAGE'
-    ]).subscribe((res: string[]) => {
-      this.translations = res;
-    });
+    this.translate
+      .get([
+        'PAGES.TOURNOI.AJOUTER.TOAST.SUCCES.TITRE',
+        'PAGES.TOURNOI.AJOUTER.TOAST.SUCCES.MESSAGE',
+        'PAGES.TOURNOI.AJOUTER.TOAST.ERREUR.TITRE',
+        'PAGES.TOURNOI.AJOUTER.TOAST.ERREUR.MESSAGE'
+      ])
+      .subscribe((res: string[]) => {
+        this.translations = res;
+      });
   }
 
   createForm() {
     this.addTournamentForm = this.fb.group({
-      tournamentName: ['', Validators.required ],
+      tournamentName: ['', Validators.required]
     });
   }
 
   addTournament() {
-    this.tournamentService.add(this.tournament)
-      .subscribe((tournament: Tournament) => {
+    this.tournamentService.add(this.tournament).subscribe(
+      (tournament: Tournament) => {
         this.toastr.show(
           this.translations['PAGES.TOURNOI.AJOUTER.TOAST.SUCCES.MESSAGE'],
           this.translations['PAGES.TOURNOI.AJOUTER.TOAST.SUCCES.TITRE'],
@@ -61,13 +62,14 @@ export class TournamentAddComponent implements OnInit {
         );
         this.addTournamentForm.reset();
         this.added.emit(tournament);
-      }, (error) => {
+      },
+      error => {
         this.toastr.show(
           this.translations['PAGES.TOURNOI.AJOUTER.TOAST.ERREUR.MESSAGE'],
           this.translations['PAGES.TOURNOI.AJOUTER.TOAST.ERREUR.TITRE'],
           { position: NbGlobalLogicalPosition.BOTTOM_END, status: 'danger' }
         );
-      });
+      }
+    );
   }
-
 }

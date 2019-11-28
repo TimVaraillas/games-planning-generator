@@ -3,14 +3,33 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http'
+import {
+  HttpClientModule,
+  HttpClient,
+  HTTP_INTERCEPTORS
+} from '@angular/common/http';
 
 // Modules de traduction
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 // Modules Nebular
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbActionsModule, NbMenuModule, NbIconModule, NbContextMenuModule, NbCardModule, NbButtonModule, NbInputModule, NbToastrModule, NbTooltipModule, NbTabsetModule, NbUserModule } from '@nebular/theme';
+import {
+  NbThemeModule,
+  NbLayoutModule,
+  NbSidebarModule,
+  NbActionsModule,
+  NbMenuModule,
+  NbIconModule,
+  NbContextMenuModule,
+  NbCardModule,
+  NbButtonModule,
+  NbInputModule,
+  NbToastrModule,
+  NbTooltipModule,
+  NbTabsetModule,
+  NbUserModule
+} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 // Modules de routing
@@ -38,7 +57,9 @@ import { RegisterComponent } from './_pages/authentication/register/register.com
 import { LoginComponent } from './_pages/authentication/login/login.component';
 import { BlankLayoutComponent } from './_layouts/blank-layout/blank-layout.component';
 import { MainLayoutComponent } from './_layouts/main-layout/main-layout.component';
-
+import { GameListComponent } from './_pages/game/list/game-list.component';
+import { GameAddComponent } from './_pages/game/add/game-add.component';
+import { GameShowComponent } from './_pages/game/show/game-show.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -58,6 +79,9 @@ export function createTranslateLoader(http: HttpClient) {
     LoginComponent,
     BlankLayoutComponent,
     MainLayoutComponent,
+    GameListComponent,
+    GameAddComponent,
+    GameShowComponent
   ],
   imports: [
     AppRoutingModule,
@@ -80,19 +104,19 @@ export function createTranslateLoader(http: HttpClient) {
     NbTooltipModule,
     NbUserModule,
     Ng2SmartTableModule,
-    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
+    ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' }),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (createTranslateLoader),
+        useFactory: createTranslateLoader,
         deps: [HttpClient]
       }
     })
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

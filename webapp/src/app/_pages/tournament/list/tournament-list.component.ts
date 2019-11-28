@@ -15,7 +15,6 @@ import { TournamentUpdateComponent } from '../update/tournament-update.component
   styleUrls: ['./tournament-list.component.scss']
 })
 export class TournamentListComponent implements OnInit {
-
   @ViewChild('addSidebar', { static: false })
   addSidebar: FiroSidebarComponent;
 
@@ -27,9 +26,8 @@ export class TournamentListComponent implements OnInit {
 
   translations: any;
 
-  source: LocalDataSource  = new LocalDataSource();
+  source: LocalDataSource = new LocalDataSource();
   settings: any = SETTINGS;
-
 
   constructor(
     private router: Router,
@@ -37,7 +35,9 @@ export class TournamentListComponent implements OnInit {
     private tournamentService: TournamentService,
     private translate: TranslateService
   ) {
-    this.settings.columns = { name: { title: 'Nom du tournoi', filter: true, width: '90%' } }; 
+    this.settings.columns = {
+      name: { title: 'Nom du tournoi', filter: true, width: '90%' }
+    };
     this.getTournaments();
   }
 
@@ -46,15 +46,17 @@ export class TournamentListComponent implements OnInit {
   }
 
   getTranslations() {
-    this.translate.get([
-      'PAGES.TOURNOI.LISTE.TOAST.SUPPRIMER.SUCCES.TITRE',
-      'PAGES.TOURNOI.LISTE.TOAST.SUPPRIMER.SUCCES.MESSAGE',
-      'PAGES.TOURNOI.LISTE.TOAST.SUPPRIMER.ERREUR.TITRE',
-      'PAGES.TOURNOI.LISTE.TOAST.SUPPRIMER.ERREUR.MESSAGE'
-    ]).subscribe((res: string[]) => {
-      this.translations = res;
-    });
-  } 
+    this.translate
+      .get([
+        'PAGES.TOURNOI.LISTE.TOAST.SUPPRIMER.SUCCES.TITRE',
+        'PAGES.TOURNOI.LISTE.TOAST.SUPPRIMER.SUCCES.MESSAGE',
+        'PAGES.TOURNOI.LISTE.TOAST.SUPPRIMER.ERREUR.TITRE',
+        'PAGES.TOURNOI.LISTE.TOAST.SUPPRIMER.ERREUR.MESSAGE'
+      ])
+      .subscribe((res: string[]) => {
+        this.translations = res;
+      });
+  }
 
   toggleAddSidebar() {
     this.addSidebar.toggle();
@@ -80,7 +82,9 @@ export class TournamentListComponent implements OnInit {
 
   tournamentUpdated(tournament: Tournament) {
     this.source.getAll().then((tournaments: Tournament[]) => {
-      let old = tournaments.find((t) => { return t._id == tournament._id });
+      let old = tournaments.find(t => {
+        return t._id == tournament._id;
+      });
       tournaments[tournaments.indexOf(old)] = tournament;
       this.source.reset();
       this.source.load(tournaments);
@@ -93,23 +97,32 @@ export class TournamentListComponent implements OnInit {
   }
 
   deleteTournament(event: any) {
-    if ( confirm( 'Êtes-vous sûr de vouloir supprimer ce tournoi ?' ) ) {
-      this.tournamentService.delete(event.data._id)
-      .subscribe(() => {
-        this.source.remove(event.data);
-        this.toastr.show(
-          this.translations['PAGES.TOURNOI.LISTE.TOAST.SUPPRIMER.SUCCES.MESSAGE'],
-          this.translations['PAGES.TOURNOI.LISTE.TOAST.SUPPRIMER.SUCCES.TITRE'],
-          { position: NbGlobalLogicalPosition.BOTTOM_END, status: 'success' }
-        );
-      }, (error) => {
-        this.toastr.show(
-          this.translations['PAGES.TOURNOI.LISTE.TOAST.SUPPRIMER.ERREUR.MESSAGE'],
-          this.translations['PAGES.TOURNOI.LISTE.TOAST.SUPPRIMER.ERREUR.TITRE'],
-          { position: NbGlobalLogicalPosition.BOTTOM_END, status: 'danger' }
-        );
-      });
+    if (confirm('Êtes-vous sûr de vouloir supprimer ce tournoi ?')) {
+      this.tournamentService.delete(event.data._id).subscribe(
+        () => {
+          this.source.remove(event.data);
+          this.toastr.show(
+            this.translations[
+              'PAGES.TOURNOI.LISTE.TOAST.SUPPRIMER.SUCCES.MESSAGE'
+            ],
+            this.translations[
+              'PAGES.TOURNOI.LISTE.TOAST.SUPPRIMER.SUCCES.TITRE'
+            ],
+            { position: NbGlobalLogicalPosition.BOTTOM_END, status: 'success' }
+          );
+        },
+        error => {
+          this.toastr.show(
+            this.translations[
+              'PAGES.TOURNOI.LISTE.TOAST.SUPPRIMER.ERREUR.MESSAGE'
+            ],
+            this.translations[
+              'PAGES.TOURNOI.LISTE.TOAST.SUPPRIMER.ERREUR.TITRE'
+            ],
+            { position: NbGlobalLogicalPosition.BOTTOM_END, status: 'danger' }
+          );
+        }
+      );
     }
   }
-
 }
