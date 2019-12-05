@@ -15,6 +15,8 @@ var jwtHelpers = require("./helpers/jwt.helpers");
 
 var userRouter = require("./routes/user.router");
 var tournamentRouter = require("./routes/tournament.router");
+var gameRouter = require("./routes/game.router");
+var teamRouter = require("./routes/team.router");
 
 
 var app = express();
@@ -25,7 +27,9 @@ app.set("view engine", "pug");
 
 app.use(logger("dev"));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+  extended: false
+}));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
@@ -38,7 +42,7 @@ mongoose.connect(process.env.MONGODB_URI, {
     useUnifiedTopology: true,
     useNewUrlParser: true
   })
-  .then(function() {
+  .then(function () {
     console.log("Database is connected")
   }, function (err) {
     console.log("Can not connect to the database" + err)
@@ -50,6 +54,8 @@ app.use(passport.initialize());
 // Routes
 app.use("/user", userRouter);
 app.use("/tournament", jwtHelpers.verifyJwtToken, tournamentRouter);
+app.use("/game", jwtHelpers.verifyJwtToken, gameRouter);
+app.use("/team", jwtHelpers.verifyJwtToken, teamRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
