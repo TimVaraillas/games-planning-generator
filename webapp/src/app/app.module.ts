@@ -28,9 +28,17 @@ import {
   NbToastrModule,
   NbTooltipModule,
   NbTabsetModule,
-  NbUserModule
+  NbUserModule,
+  NbSelectModule
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+
+// OWL Datetime picker
+import { OwlDateTimeModule } from 'ng-pick-datetime';
+import { OwlMomentDateTimeModule, OWL_MOMENT_DATE_TIME_ADAPTER_OPTIONS } from 'ng-pick-datetime-moment';
+import { DateTimeAdapter, OWL_DATE_TIME_LOCALE, OwlDateTimeIntl } from 'ng-pick-datetime';
+import { MomentDateTimeAdapter } from 'ng-pick-datetime-moment/moment-adapter/moment-date-time-adapter.class';
+import { FrenchIntl } from 'src/app/_class/owlDateTimeIntl/intl';
 
 // Modules de routing
 import { AppRoutingModule } from './app-routing.module';
@@ -42,24 +50,26 @@ import { ErrorInterceptor } from './_helpers/interceptors/error.interceptor';
 // Module Ng2SmartTable
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 
+// Ngx Color
+import { ColorCircleModule } from 'ngx-color/circle';
+
 // Components FinalRound
 import { FiroSidebarComponent } from './_components/firo-sidebar/firo-sidebar.component';
+import { ColorCellComponent } from './_components/ng2-smart-table/color-cell/color-cell.component';
 
-// Pages
+// Layouts
 import { AppComponent } from './app.component';
-import { HomeComponent } from './_pages/home/home.component';
-import { TournamentListComponent } from './_pages/tournament/list/tournament-list.component';
-import { PageNotFoundComponent } from './_pages/errors/page-not-found/page-not-found.component';
-import { TournamentAddComponent } from './_pages/tournament/add/tournament-add.component';
-import { TournamentShowComponent } from './_pages/tournament/show/tournament-show.component';
-import { TournamentUpdateComponent } from './_pages/tournament/update/tournament-update.component';
-import { RegisterComponent } from './_pages/authentication/register/register.component';
-import { LoginComponent } from './_pages/authentication/login/login.component';
 import { BlankLayoutComponent } from './_layouts/blank-layout/blank-layout.component';
 import { MainLayoutComponent } from './_layouts/main-layout/main-layout.component';
+
+// Pages
+import { PageNotFoundComponent } from './_pages/errors/page-not-found/page-not-found.component';
+import { RegisterComponent } from './_pages/authentication/register/register.component';
+import { LoginComponent } from './_pages/authentication/login/login.component';
+import { HomeComponent } from './_pages/home/home.component';
 import { GameListComponent } from './_pages/game/list/game-list.component';
-import { GameAddComponent } from './_pages/game/add/game-add.component';
 import { GameShowComponent } from './_pages/game/show/game-show.component';
+import { GameFormComponent } from './_pages/game/form/game-form.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -68,20 +78,17 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    FiroSidebarComponent,
-    HomeComponent,
-    TournamentListComponent,
-    PageNotFoundComponent,
-    TournamentAddComponent,
-    TournamentShowComponent,
-    TournamentUpdateComponent,
-    RegisterComponent,
-    LoginComponent,
     BlankLayoutComponent,
     MainLayoutComponent,
+    FiroSidebarComponent,
+    ColorCellComponent,
+    PageNotFoundComponent,
+    RegisterComponent,
+    LoginComponent,
+    HomeComponent,
     GameListComponent,
-    GameAddComponent,
-    GameShowComponent
+    GameShowComponent,
+    GameFormComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -97,6 +104,7 @@ export function createTranslateLoader(http: HttpClient) {
     NbLayoutModule,
     NbMenuModule.forRoot(),
     NbContextMenuModule,
+    NbSelectModule,
     NbSidebarModule.forRoot(),
     NbTabsetModule,
     NbThemeModule.forRoot({ name: 'dark' }),
@@ -104,6 +112,9 @@ export function createTranslateLoader(http: HttpClient) {
     NbTooltipModule,
     NbUserModule,
     Ng2SmartTableModule,
+    ColorCircleModule,
+    OwlDateTimeModule,
+    OwlMomentDateTimeModule,
     ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' }),
     TranslateModule.forRoot({
       loader: {
@@ -113,10 +124,15 @@ export function createTranslateLoader(http: HttpClient) {
       }
     })
   ],
+  entryComponents: [ColorCellComponent],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: OWL_MOMENT_DATE_TIME_ADAPTER_OPTIONS, useValue: { useUtc: true } },
+    { provide: OWL_DATE_TIME_LOCALE, useValue: 'fr' },
+    { provide: DateTimeAdapter, useClass: MomentDateTimeAdapter, deps: [OWL_DATE_TIME_LOCALE] },
+    { provide: OwlDateTimeIntl, useClass: FrenchIntl },
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
