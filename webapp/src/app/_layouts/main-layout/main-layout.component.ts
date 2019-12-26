@@ -39,11 +39,11 @@ export class MainLayoutComponent implements OnInit {
 
   ngOnInit() {
     this.languages = [
-      { code: 'de', title: 'Deutsch', icon: { icon: 'de', pack: 'flag' } },
       { code: 'en', title: 'English', icon: { icon: 'en', pack: 'flag' } },
-      { code: 'es', title: 'Español', icon: { icon: 'es', pack: 'flag' } },
       { code: 'fr', title: 'Français', icon: { icon: 'fr', pack: 'flag' } },
-      { code: 'it', title: 'Italiano', icon: { icon: 'it', pack: 'flag' } }
+      // { code: 'de', title: 'Deutsch', icon: { icon: 'de', pack: 'flag' } },
+      // { code: 'es', title: 'Español', icon: { icon: 'es', pack: 'flag' } },
+      // { code: 'it', title: 'Italiano', icon: { icon: 'it', pack: 'flag' } }
     ];
   }
 
@@ -51,7 +51,7 @@ export class MainLayoutComponent implements OnInit {
     this.translate
       .get([
         'MENU.PRINCIPAL.ACCUEIL',
-        'MENU.PRINCIPAL.TOURNOIS',
+        'MENU.PRINCIPAL.MATCHS',
         'MENU.UTILISATEUR.PROFIL',
         'MENU.UTILISATEUR.DECONNEXION'
       ])
@@ -105,12 +105,7 @@ export class MainLayoutComponent implements OnInit {
         link: '/'
       },
       {
-        title: this.translations['MENU.PRINCIPAL.TOURNOIS'],
-        icon: { icon: 'trophy', pack: 'fas' },
-        link: '/tournament/list'
-      },
-      {
-        title: 'Matchs',
+        title: this.translations['MENU.PRINCIPAL.MATCHS'],
         icon: { icon: 'basketball-ball', pack: 'fas' },
         link: '/game/list'
       }
