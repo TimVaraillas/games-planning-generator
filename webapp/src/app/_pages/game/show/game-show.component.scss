@@ -1,0 +1,34 @@
+.info-container {
+  padding: 1rem 0;
+
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+  }
+
+  .info-group {
+    flex: 1;
+    padding: 1.25rem;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: .25rem;
+    margin: 0 .5rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    label.info-label {
+      font-weight: 900;
+    }
+
+    .info-value {
+      margin: 0.25rem 0 0 0;
+      font-weight: 100;
+
+      &::first-letter {
+        text-transform: capitalize;
+      }
+    }
+  }
+}

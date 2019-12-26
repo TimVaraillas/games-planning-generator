@@ -1,1 +1,62 @@
-<p>game-show works!</p>
+<nb-card accent="primary">
+  <nb-card-body>
+
+    <nb-tabset>
+
+      <nb-tab tabTitle="{{ 'PAGES.MATCH.DETAIL.INFORMATIONS_GENERALES' | translate }}" responsive>
+        <div class="info-container">
+
+          <div class="info-row">
+            <div class="info-group">
+              <label class="info-label">{{ 'PAGES.MATCH.DETAIL.DATE' | translate }}</label>
+              <p class="info-value">{{ game.datetime ? moment(game.datetime).format('dddd LL') : '-'}}</p>
+            </div>
+
+            <div class="info-group">
+              <label class="info-label">{{ 'PAGES.MATCH.DETAIL.HEURE' | translate }}</label>
+              <p class="info-value">{{ game.datetime ? moment(game.datetime).format('LT') : '-' }}</p>
+            </div>
+
+            <div class="info-group">
+              <label class="info-label">{{ 'PAGES.MATCH.DETAIL.CATEGORIE' | translate }}</label>
+              <p class="info-value">{{ game.category ? game.category : '-'}}</p>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-group">
+              <label class="info-label">{{ 'PAGES.MATCH.DETAIL.LIEU' | translate }}</label>
+              <p class="info-value">{{ game.address ? game.address : '-' }}</p>
+            </div>
+
+            <div class="info-group">
+              <label class="info-label">{{ 'PAGES.MATCH.DETAIL.CHAMPIONNAT' | translate }}</label>
+              <p class="info-value">{{ game.championship ? game.championship : '-' }}</p>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-group">
+              <label class="info-label">{{ 'PAGES.MATCH.DETAIL.EQUIPE_LOCALE' | translate }}</label>
+              <p class="info-value">{{ game.localTeam && game.localTeam.name ? game.localTeam.name : '-' }}</p>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-group">
+              <label class="info-label">{{ 'PAGES.MATCH.DETAIL.EQUIPE_VISITEUSE' | translate }}</label>
+              <p class="info-value">{{ game.awayTeam && game.awayTeam.name ? game.awayTeam.name : '-' }}</p>
+            </div>
+          </div>
+
+          <div class="info-actions">
+            <button nbButton type="submit" status="danger" class="pull-right"
+              (click)="deleteGame()">{{ 'GENERAL.SUPPRIMER' | translate }}</button>
+          </div>
+        </div>
+      </nb-tab>
+
+    </nb-tabset>
+
+  </nb-card-body>
+</nb-card>

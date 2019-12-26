@@ -1,14 +1,18 @@
 <nb-card accent="primary">
-    <nb-card-header>Matchs</nb-card-header>
-    <nb-card-body>
-        <div class="table-container">
-            <ng2-smart-table [settings]="settings" [source]="source" (create)="toggleAddSidebar()" (edit)="toggleUpdateSidebar($event)" (delete)="deleteTournament($event)" (userRowSelect)="showTournament($event)"></ng2-smart-table>
-        </div>
-    </nb-card-body>
+  <nb-card-header>{{ 'PAGES.MATCH.LISTE.MATCHS' | translate }}</nb-card-header>
+  <nb-card-body>
+    <div class="table-container">
+      <ng2-smart-table *ngIf="!loading" [settings]="settings" [source]="source" (create)="toggleAddSidebar()"
+        (edit)="toggleUpdateSidebar($event)" (delete)="deleteGame($event)" (userRowSelect)="showGame($event)">
+      </ng2-smart-table>
+    </div>
+  </nb-card-body>
 </nb-card>
 
 <firo-sidebar [tag]="'addSidebar'" #addSidebar>
-  <app-game-add></app-game-add>
+  <app-game-form [action]="'add'" (added)="gameAdded($event)"></app-game-form>
 </firo-sidebar>
 
-
+<firo-sidebar [tag]="'updateSidebar'" #updateSidebar>
+  <app-game-form [action]="'update'" (updated)="gameUpdated($event)" #updateFormComponent></app-game-form>
+</firo-sidebar>
