@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GameAddComponent } from './game-add.component';
+import { ColorCellComponent } from './color-cell.component';
 
-describe('GameAddComponent', () => {
-  let component: GameAddComponent;
-  let fixture: ComponentFixture<GameAddComponent>;
+describe('ColorCellComponent', () => {
+  let component: ColorCellComponent;
+  let fixture: ComponentFixture<ColorCellComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GameAddComponent ]
+      declarations: [ ColorCellComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GameAddComponent);
+    fixture = TestBed.createComponent(ColorCellComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
