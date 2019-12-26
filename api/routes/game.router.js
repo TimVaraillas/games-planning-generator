@@ -54,19 +54,16 @@ router.route("/delete/:id").delete(function (req, res) {
 
 // PUT /game/update/:id
 router.route("/update/:id").put(function (req, res) {
-  Game.findById(req.params.id, function (err, game) {
-    if (!game) {
-      res.status(404).send('game does not exists')
-    } else {
-      game.name = req.body.name;
-      game.save().then(game => {
-          res.json(game);
-        })
-        .catch(err => {
-          res.status(400).send("unable to update the database");
-        });
-    }
-  });
+  Game.findOneAndUpdate({
+        _id: req.params.id
+      },
+      req.body
+    ).then(game => {
+      res.status(200).json(game);
+    })
+    .catch(err => {
+      res.status(400).send("unable to save to database");
+    });
 });
 
 module.exports = router;

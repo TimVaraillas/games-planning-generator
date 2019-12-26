@@ -14,7 +14,6 @@ var passport = require("passport");
 var jwtHelpers = require("./helpers/jwt.helpers");
 
 var userRouter = require("./routes/user.router");
-var tournamentRouter = require("./routes/tournament.router");
 var gameRouter = require("./routes/game.router");
 var teamRouter = require("./routes/team.router");
 
@@ -53,7 +52,6 @@ app.use(passport.initialize());
 
 // Routes
 app.use("/user", userRouter);
-app.use("/tournament", jwtHelpers.verifyJwtToken, tournamentRouter);
 app.use("/game", jwtHelpers.verifyJwtToken, gameRouter);
 app.use("/team", jwtHelpers.verifyJwtToken, teamRouter);
 
