@@ -6,12 +6,13 @@
 @include nb-install() {
   @include nb-theme-global();
   @include nb-bootstrap-global();
-};
+}
 
 @import './styles/_form';
 @import './styles/_side-bar';
 @import './styles/_single-elimination-grid';
 @import './styles/_smart-tables';
+@import "./styles/_datetime-picker";
 
 nb-tab {
   overflow: hidden !important;
@@ -24,4 +25,3 @@ nb-tab {
 .user-picture {
   border: none !important;
 }
-
