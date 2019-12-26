@@ -1,14 +1,14 @@
 <nb-card>
   <nb-card-header>
-    <span *ngIf="action == 'add'">{{ 'PAGES.MATCH.FORMULAIRE.CREER_NOUVEAU_MATCH' | translate }}</span>
-    <span *ngIf="action == 'update'">{{ 'PAGES.MATCH.FORMULAIRE.MODIFIER_MATCH' | translate }}</span>
+    <span *ngIf="action == 'add'">{{ 'MATCH.FORMULAIRE.CREER_NOUVEAU_MATCH' | translate }}</span>
+    <span *ngIf="action == 'update'">{{ 'MATCH.FORMULAIRE.MODIFIER_MATCH' | translate }}</span>
   </nb-card-header>
 
   <nb-card-body>
     <form [formGroup]="formGroup" (ngSubmit)="submitForm()">
 
       <div class="form-group">
-        <label class="label">{{ 'PAGES.MATCH.FORMULAIRE.ADRESSE' | translate }}</label>
+        <label class="label">{{ 'MATCH.FORMULAIRE.ADRESSE' | translate }}</label>
         <input type="text" nbInput fullWidth formControlName="address" [(ngModel)]="game.address" [ngClass]="{
           'input-danger': formGroup.controls['address'].invalid && (formGroup.controls['address'].dirty || formGroup.controls['address'].touched), 
           'input-success': formGroup.controls['address'].valid && (formGroup.controls['address'].dirty || formGroup.controls['address'].touched)
@@ -16,7 +16,7 @@
       </div>
 
       <div class="form-group">
-        <label class="label">{{ 'PAGES.MATCH.FORMULAIRE.DATE_ET_HEURE' | translate }} *</label>
+        <label class="label">{{ 'MATCH.FORMULAIRE.DATE_ET_HEURE' | translate }} *</label>
         <input nbInput fullWidth [owlDateTimeTrigger]="dt" [owlDateTime]="dt" formControlName="datetime"
           [(ngModel)]="game.datetime" [ngClass]="{
           'input-danger': formGroup.controls['datetime'].invalid && (formGroup.controls['datetime'].dirty || formGroup.controls['datetime'].touched), 
@@ -32,7 +32,7 @@
       </div>
 
       <div class="form-group">
-        <label class="label">{{ 'PAGES.MATCH.FORMULAIRE.CATEGORIE' | translate }} *</label>
+        <label class="label">{{ 'MATCH.FORMULAIRE.CATEGORIE' | translate }} *</label>
         <nb-select fullWidth placeholder="Choisir une catégorie" formControlName="category" [(ngModel)]="game.category"
           [(selected)]="game.category" [ngClass]="{
           'status-danger': formGroup.controls['category'].invalid && (formGroup.controls['category'].dirty || formGroup.controls['category'].touched), 
@@ -49,7 +49,7 @@
       </div>
 
       <div class="form-group">
-        <label class="label">{{ 'PAGES.MATCH.FORMULAIRE.CHAMPIONNAT' | translate }}</label>
+        <label class="label">{{ 'MATCH.FORMULAIRE.CHAMPIONNAT' | translate }}</label>
         <input type="text" nbInput fullWidth formControlName="championship" [(ngModel)]="game.championship" [ngClass]="{
           'input-danger': formGroup.controls['championship'].invalid && (formGroup.controls['championship'].dirty || formGroup.controls['championship'].touched), 
           'input-success': formGroup.controls['championship'].valid && (formGroup.controls['championship'].dirty || formGroup.controls['championship'].touched)
@@ -57,14 +57,14 @@
       </div>
 
       <div class="form-group">
-        <label class="label">{{ 'PAGES.MATCH.FORMULAIRE.COULEUR' | translate }}</label>
+        <label class="label">{{ 'MATCH.FORMULAIRE.COULEUR' | translate }}</label>
         <color-circle *ngIf="!game.color" (onChange)="colorChanged($event)" #colorPicker></color-circle>
         <color-circle *ngIf="game.color" [color]="game.color" (onChange)="colorChanged($event)" #colorPicker>
         </color-circle>
       </div>
 
       <div class="form-group">
-        <label class="label">{{ 'PAGES.MATCH.FORMULAIRE.EQUIPE_LOCALE' | translate }} *</label>
+        <label class="label">{{ 'MATCH.FORMULAIRE.EQUIPE_LOCALE' | translate }} *</label>
         <input type="text" nbInput fullWidth formControlName="localTeam" [(ngModel)]="game.localTeam.name" [ngClass]="{
           'input-danger': formGroup.controls['localTeam'].invalid && (formGroup.controls['localTeam'].dirty || formGroup.controls['localTeam'].touched), 
           'input-success': formGroup.controls['localTeam'].valid && (formGroup.controls['localTeam'].dirty || formGroup.controls['localTeam'].touched)
@@ -78,7 +78,7 @@
       </div>
 
       <div class="form-group">
-        <label class="label">{{ 'PAGES.MATCH.FORMULAIRE.EQUIPE_VISITEUSE' | translate }} *</label>
+        <label class="label">{{ 'MATCH.FORMULAIRE.EQUIPE_VISITEUSE' | translate }} *</label>
         <input type="text" nbInput fullWidth formControlName="awayTeam" [(ngModel)]="game.awayTeam.name" [ngClass]="{
           'input-danger': formGroup.controls['awayTeam'].invalid && (formGroup.controls['awayTeam'].dirty || formGroup.controls['awayTeam'].touched), 
           'input-success': formGroup.controls['awayTeam'].valid && (formGroup.controls['awayTeam'].dirty || formGroup.controls['awayTeam'].touched)

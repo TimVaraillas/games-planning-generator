@@ -1,5 +1,5 @@
 <nb-card accent="primary">
-  <nb-card-header>{{ 'PAGES.MATCH.LISTE.MATCHS' | translate }}</nb-card-header>
+  <nb-card-header>{{ 'MATCH.LISTE.MATCHS' | translate }}</nb-card-header>
   <nb-card-body>
     <div class="table-container">
       <ng2-smart-table *ngIf="!loading" [settings]="settings" [source]="source" (create)="toggleAddSidebar()"

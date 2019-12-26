@@ -47,19 +47,17 @@ export class GameListComponent implements OnInit {
     this.loading = true;
     this.translate
       .get([
-        'PAGES.MATCH.ALERTE.SUPPRIMER_MESSAGE',
-        'PAGES.MATCH.LISTE.CATEGORY',
-        'PAGES.MATCH.LISTE.CHAMPIONNAT',
-        'PAGES.MATCH.LISTE.COULEUR',
-        'PAGES.MATCH.LISTE.DATE',
-        'PAGES.MATCH.LISTE.DOMICILE',
-        'PAGES.MATCH.LISTE.EXTERIEUR',
-        'PAGES.MATCH.LISTE.HEURE',
-        'PAGES.MATCH.LISTE.LIEU',
-        'PAGES.MATCH.TOAST.SUPPRIMER.SUCCES_TITRE',
-        'PAGES.MATCH.TOAST.SUPPRIMER.SUCCES_MESSAGE',
-        'PAGES.MATCH.TOAST.SUPPRIMER.ERREUR_TITRE',
-        'PAGES.MATCH.TOAST.SUPPRIMER.ERREUR_MESSAGE'
+        'MATCH.ALERTE.SUPPRIMER_MESSAGE',
+        'MATCH.LISTE.CATEGORY',
+        'MATCH.LISTE.CHAMPIONNAT',
+        'MATCH.LISTE.COULEUR',
+        'MATCH.LISTE.DATE',
+        'MATCH.LISTE.DOMICILE',
+        'MATCH.LISTE.EXTERIEUR',
+        'MATCH.LISTE.HEURE',
+        'MATCH.LISTE.LIEU',
+        'FORMULAIRE.TOAST.SUPPRESSION.SUCCES.MESSAGE',
+        'FORMULAIRE.TOAST.ERREUR.MESSAGE'
       ])
       .subscribe((res: string[]) => {
         this.loading = false;
@@ -71,15 +69,15 @@ export class GameListComponent implements OnInit {
   setTableSettings() {
     this.settings.columns = {
       color: {
-        title: this.translations['PAGES.MATCH.LISTE.COULEUR'],
+        title: this.translations['MATCH.LISTE.COULEUR'],
         filter: false,
         type: 'custom',
         renderComponent: ColorCellComponent
       },
-      category: { title: this.translations['PAGES.MATCH.LISTE.CATEGORY'] },
-      championship: { title: this.translations['PAGES.MATCH.LISTE.CHAMPIONNAT'] },
+      category: { title: this.translations['MATCH.LISTE.CATEGORY'] },
+      championship: { title: this.translations['MATCH.LISTE.CHAMPIONNAT'] },
       localTeam: {
-        title: this.translations['PAGES.MATCH.LISTE.DOMICILE'],
+        title: this.translations['MATCH.LISTE.DOMICILE'],
         valuePrepareFunction: (team) => team.name,
         filterFunction: (team?: any, search?: string): boolean => {
           let match = true;
@@ -94,7 +92,7 @@ export class GameListComponent implements OnInit {
         },
       },
       awayTeam: {
-        title: this.translations['PAGES.MATCH.LISTE.EXTERIEUR'],
+        title: this.translations['MATCH.LISTE.EXTERIEUR'],
         valuePrepareFunction: (team) => team.name,
         filterFunction: (team?: any, search?: string): boolean => {
           let match = true;
@@ -108,9 +106,9 @@ export class GameListComponent implements OnInit {
           }
         },
       },
-      date: { title: this.translations['PAGES.MATCH.LISTE.DATE'] },
-      time: { title: this.translations['PAGES.MATCH.LISTE.HEURE'] },
-      address: { title: this.translations['PAGES.MATCH.LISTE.LIEU'] },
+      date: { title: this.translations['MATCH.LISTE.DATE'] },
+      time: { title: this.translations['MATCH.LISTE.HEURE'] },
+      address: { title: this.translations['MATCH.LISTE.LIEU'] },
     };
   }
 
@@ -148,28 +146,20 @@ export class GameListComponent implements OnInit {
   }
 
   deleteGame(event: any) {
-    if (confirm(this.translations['PAGES.MATCH.ALERTE.SUPPRIMER_MESSAGE'])) {
+    if (confirm(this.translations['MATCH.ALERTE.SUPPRIMER_MESSAGE'])) {
       this.gameService.delete(event.data._id).subscribe(
         () => {
           this.source.remove(event.data);
           this.toastr.show(
-            this.translations[
-            'PAGES.MATCH.TOAST.SUPPRIMER.SUCCES_MESSAGE'
-            ],
-            this.translations[
-            'PAGES.MATCH.TOAST.SUPPRIMER.SUCCES_TITRE'
-            ],
+            '',
+            this.translations['FORMULAIRE.TOAST.SUPPRESSION.SUCCES.MESSAGE'],
             { position: NbGlobalLogicalPosition.BOTTOM_END, status: 'success' }
           );
         },
         error => {
           this.toastr.show(
-            this.translations[
-            'PAGES.MATCH.TOAST.SUPPRIMER.ERREUR_MESSAGE'
-            ],
-            this.translations[
-            'PAGES.MATCH.TOAST.SUPPRIMER.ERREUR_TITRE'
-            ],
+            '',
+            this.translations['FORMULAIRE.TOAST.ERREUR.MESSAGE'],
             { position: NbGlobalLogicalPosition.BOTTOM_END, status: 'danger' }
           );
         }

@@ -1,4 +1,10 @@
 {
+  "404": {
+    "ERREUR_404": "Error 404",
+    "MESSAGE_BOUTON": "Take me home",
+    "MESSAGE_ERREUR": "The page you're trying to reach doesn't exist.",
+    "OUPS": "Oops!"
+  },
   "AUTHENTIFICATION": {
     "CONNEXION": {
       "FORMULAIRE": {
@@ -102,6 +108,43 @@
     "MODIFIER": "Update",
     "SUPPRIMER": "Supprimer"
   },
+  "MATCH": {
+    "ALERTE": {
+      "SUPPRIMER_MESSAGE": "Are you sure you want to delete this game?"
+    },
+    "DETAIL": {
+      "CATEGORIE": "Category",
+      "CHAMPIONNAT": "Championship",
+      "DATE": "Date",
+      "EQUIPE_LOCALE": "Local team",
+      "EQUIPE_VISITEUSE": "Away team",
+      "HEURE": "Time",
+      "INFORMATIONS_GENERALES": "General information",
+      "LIEU": "Place"
+    },
+    "FORMULAIRE": {
+      "ADRESSE": "Address",
+      "CATEGORIE": "Category",
+      "CHAMPIONNAT": "Championship",
+      "COULEUR": "Color",
+      "CREER_NOUVEAU_MATCH": "Create a new game",
+      "DATE_ET_HEURE": "Date and time",
+      "EQUIPE_LOCALE": "Local team",
+      "EQUIPE_VISITEUSE": "Away team",
+      "MODIFIER_MATCH": "Update the game"
+    },
+    "LISTE": {
+      "CATEGORY": "Category",
+      "CHAMPIONNAT": "Championship",
+      "COULEUR": "Color",
+      "DATE": "Date",
+      "DOMICILE": "Home",
+      "EXTERIEUR": "Away",
+      "HEURE": "Time",
+      "LIEU": "Location",
+      "MATCHS": "Games"
+    }
+  },
   "MENU": {
     "ACCUEIL": "Home",
     "PRINCIPAL": {
@@ -111,63 +154,6 @@
     "UTILISATEUR": {
       "DECONNEXION": "Log out",
       "PROFIL": "My profile"
-    }
-  },
-  "PAGES": {
-    "404": {
-      "ERREUR_404": "Error 404",
-      "MESSAGE_BOUTON": "Take me home",
-      "MESSAGE_ERREUR": "The page you're trying to reach doesn't exist.",
-      "OUPS": "Oops!"
-    },
-    "MATCH": {
-      "ALERTE": {
-        "SUPPRIMER_MESSAGE": "Are you sure you want to delete this game?"
-      },
-      "DETAIL": {
-        "CATEGORIE": "Category",
-        "CHAMPIONNAT": "Championship",
-        "DATE": "Date",
-        "EQUIPE_LOCALE": "Local team",
-        "EQUIPE_VISITEUSE": "Away team",
-        "HEURE": "Time",
-        "INFORMATIONS_GENERALES": "General information",
-        "LIEU": "Place"
-      },
-      "FORM": {
-        "EQUIPE_LOCALE": "Local team",
-        "EQUIPE_VISITEUSE": "Away team"
-      },
-      "FORMULAIRE": {
-        "ADRESSE": "Address",
-        "CATEGORIE": "Category",
-        "CHAMPIONNAT": "Championship",
-        "COULEUR": "Color",
-        "CREER_NOUVEAU_MATCH": "Create a new game",
-        "DATE_ET_HEURE": "Date and time",
-        "EQUIPE_LOCALE": "Local team",
-        "EQUIPE_VISITEUSE": "Away team",
-        "MODIFIER_MATCH": "Update the game"
-      },
-      "LISTE": {
-        "CATEGORY": "Category",
-        "CHAMPIONNAT": "Championship",
-        "COULEUR": "Color",
-        "DATE": "Date",
-        "DOMICILE": "Home",
-        "EXTERIEUR": "Away",
-        "HEURE": "Time",
-        "LIEU": "Location",
-        "MATCHS": "Games"
-      },
-      "TOAST": {
-        "SUPPRIMER": {
-          "ERREUR_MESSAGE": "An error occurred, the game could not be deleted",
-          "ERREUR_TITRE": "Error",
-          "SUCCES_MESSAGE": "The game was successfully cancelled",
-          "SUCCES_TITRE": "Game deleted"
-        }
-      }
     }
   }
 }

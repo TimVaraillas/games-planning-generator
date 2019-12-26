@@ -1,4 +1,10 @@
 {
+  "404": {
+    "ERREUR_404": "Erreur 404",
+    "MESSAGE_BOUTON": "Retour à l'accueil",
+    "MESSAGE_ERREUR": "La page que vous essayez d'atteindre n'existe pas.",
+    "OUPS": "Oups !"
+  },
   "AUTHENTIFICATION": {
     "CONNEXION": {
       "FORMULAIRE": {
@@ -102,6 +108,43 @@
     "MODIFIER": "Modifier",
     "SUPPRIMER": "Supprimer"
   },
+  "MATCH": {
+    "ALERTE": {
+      "SUPPRIMER_MESSAGE": "Êtes-vous sûr de vouloir supprimer ce match ?"
+    },
+    "DETAIL": {
+      "CATEGORIE": "Catégorie",
+      "CHAMPIONNAT": "Championnat",
+      "DATE": "Date",
+      "EQUIPE_LOCALE": "Équipe locale",
+      "EQUIPE_VISITEUSE": "Équipe visiteuse",
+      "HEURE": "Heure",
+      "INFORMATIONS_GENERALES": "Informations générales",
+      "LIEU": "Lieu"
+    },
+    "FORMULAIRE": {
+      "ADRESSE": "Adresse",
+      "CATEGORIE": "Catégorie",
+      "CHAMPIONNAT": "Championnat",
+      "COULEUR": "Couleur",
+      "CREER_NOUVEAU_MATCH": "Créer un nouveau match",
+      "DATE_ET_HEURE": "Date et heure",
+      "EQUIPE_LOCALE": "Équipe locale",
+      "EQUIPE_VISITEUSE": "Équipe visiteuse",
+      "MODIFIER_MATCH": "Modifier le match"
+    },
+    "LISTE": {
+      "CATEGORY": "Catégorie",
+      "CHAMPIONNAT": "Championnat",
+      "COULEUR": "Couleur",
+      "DATE": "Date",
+      "DOMICILE": "Domicile",
+      "EXTERIEUR": "Extérieur",
+      "HEURE": "Heure",
+      "LIEU": "Lieu",
+      "MATCHS": "Matchs"
+    }
+  },
   "MENU": {
     "ACCUEIL": "Accueil",
     "PRINCIPAL": {
@@ -111,63 +154,6 @@
     "UTILISATEUR": {
       "DECONNEXION": "Déconnexion",
       "PROFIL": "Mon profil"
-    }
-  },
-  "PAGES": {
-    "404": {
-      "ERREUR_404": "Erreur 404",
-      "MESSAGE_BOUTON": "Retour à l'accueil",
-      "MESSAGE_ERREUR": "La page que vous essayez d'atteindre n'existe pas.",
-      "OUPS": "Oups !"
-    },
-    "MATCH": {
-      "ALERTE": {
-        "SUPPRIMER_MESSAGE": "Êtes-vous sûr de vouloir supprimer ce match ?"
-      },
-      "DETAIL": {
-        "CATEGORIE": "Catégorie",
-        "CHAMPIONNAT": "Championnat",
-        "DATE": "Date",
-        "EQUIPE_LOCALE": "Équipe locale",
-        "EQUIPE_VISITEUSE": "Équipe visiteuse",
-        "HEURE": "Heure",
-        "INFORMATIONS_GENERALES": "Informations générales",
-        "LIEU": "Lieu"
-      },
-      "FORM": {
-        "EQUIPE_LOCALE": "Équipe locale",
-        "EQUIPE_VISITEUSE": "Équipe visiteuse"
-      },
-      "FORMULAIRE": {
-        "ADRESSE": "Adresse",
-        "CATEGORIE": "Catégorie",
-        "CHAMPIONNAT": "Championnat",
-        "COULEUR": "Couleur",
-        "CREER_NOUVEAU_MATCH": "Créer un nouveau match",
-        "DATE_ET_HEURE": "Date et heure",
-        "EQUIPE_LOCALE": "Équipe locale",
-        "EQUIPE_VISITEUSE": "Équipe visiteuse",
-        "MODIFIER_MATCH": "Modifier le match"
-      },
-      "LISTE": {
-        "CATEGORY": "Catégorie",
-        "CHAMPIONNAT": "Championnat",
-        "COULEUR": "Couleur",
-        "DATE": "Date",
-        "DOMICILE": "Domicile",
-        "EXTERIEUR": "Extérieur",
-        "HEURE": "Heure",
-        "LIEU": "Lieu",
-        "MATCHS": "Matchs"
-      },
-      "TOAST": {
-        "SUPPRIMER": {
-          "ERREUR_MESSAGE": "Une erreur s'est produite, le match n'a pas pu être supprimé",
-          "ERREUR_TITRE": "Erreur",
-          "SUCCES_MESSAGE": "Le match a été supprimé avec succès",
-          "SUCCES_TITRE": "Match supprimé"
-        }
-      }
     }
   }
 }
